@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.danieldobalian.balance">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -39,6 +41,10 @@
         <activity
             android:name=".export"
             android:label="@string/title_activity_export"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SendToDoctor"
+            android:label="@string/title_activity_send_to_doctor"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

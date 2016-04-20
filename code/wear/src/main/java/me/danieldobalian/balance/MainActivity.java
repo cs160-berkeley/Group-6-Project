@@ -25,9 +25,18 @@ public class MainActivity extends WearableActivity {
         setContentView(R.layout.activity_main);
         setAmbientEnabled();
 
-        mContainerView = (BoxInsetLayout) findViewById(R.id.container);
-        mTextView = (TextView) findViewById(R.id.text);
-        mClockView = (TextView) findViewById(R.id.clock);
+
+        /* This code sends a message to phone */
+//        Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
+//        sendIntent.putExtra("command", "mood");
+//        sendIntent.putExtra("data", "3.5");
+//        startService(sendIntent);
+
+        /* This code sends a message to phone */
+//        Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
+//        sendIntent.putExtra("command", "diet");
+//        sendIntent.putExtra("data", "3.5");
+//        startService(sendIntent);
     }
 
     @Override

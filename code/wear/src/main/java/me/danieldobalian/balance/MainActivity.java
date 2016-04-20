@@ -1,9 +1,11 @@
 package me.danieldobalian.balance;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.BoxInsetLayout;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -18,12 +20,33 @@ public class MainActivity extends WearableActivity {
     private BoxInsetLayout mContainerView;
     private TextView mTextView;
     private TextView mClockView;
+    Button mood;
+    Button diet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setAmbientEnabled();
+        mood = (Button) findViewById(R.id.mood);
+        diet = (Button) findViewById(R.id.diet);
+
+        mood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moodInput = new Intent(getBaseContext(), MoodInputActivity.class);
+                startActivity(moodInput);
+            }
+        });
+
+
+        diet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dietInput = new Intent(getBaseContext(), DietInputActivity.class);
+                startActivity(dietInput);
+            }
+        });
 
 
         /* This code sends a message to phone */

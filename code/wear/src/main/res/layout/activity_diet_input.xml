@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/watch_view_stub"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:rectLayout="@layout/rect_activity_diet_input"
+    app:roundLayout="@layout/round_activity_diet_input"
+    tools:context="me.danieldobalian.balance.DietInputActivity"
+    tools:deviceIds="wear">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/frameLayout2">
+
+        <RatingBar
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/myRatingBar"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:stepSize="1"
+            style="?android:attr/ratingBarStyleSmall"
+            />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="unhealthy"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/frameLayout2"
+        android:layout_alignStart="@+id/frameLayout2"
+        android:textSize="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="healthy"
+        android:id="@+id/textView11"
+        android:layout_below="@+id/frameLayout2"
+        android:layout_alignEnd="@+id/frameLayout2"
+        android:textSize="8dp" />
+</RelativeLayout>

@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.util.Log;
 
 public class DietInputActivity extends Activity {
 
@@ -37,10 +38,11 @@ public class DietInputActivity extends Activity {
                 int stars = (int)starsf + 1;
                 minimumRating.setRating(stars);
 
-//                        Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
-//        sendIntent.putExtra("command", "diet");
-//        sendIntent.putExtra("data", Integer.toString(stars));
-//        startService(sendIntent);
+                Log.v("T", "Sending diet to watch2phone");
+                Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
+                sendIntent.putExtra("command", "diet");
+                sendIntent.putExtra("data", Integer.toString(stars));
+                startService(sendIntent);
 
 
                 Intent intent = new Intent(getBaseContext(), DataInputtedActivity.class);

@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
+
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.wearable.Node;
@@ -26,6 +28,7 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
 
     @Override
     public void onCreate() {
+        Log.v("T", "Inside watch2phone oncreate");
         super.onCreate();
         //initialize the googleAPIClient for message passing
         mWatchApiClient = new GoogleApiClient.Builder( this )
@@ -58,9 +61,12 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
                         Log.v("T", "Bundle: " + bundle);
                         // final String command = bundle.getString("command");
                         //final String data = bundle.getString("data");
-                        Log.v("T", "Sending /command and data: ");
+                        Log.v("T", "Sending /command: " + command);
+                        Toast.makeText(getApplicationContext(), "Sending Data to phone: " + data,
+                                Toast.LENGTH_LONG).show();
+
                         sendMessage("/" + command, data);
-                        Log.v("T", "Sent message detailed with: ");
+                        Log.v("T", "Sent message detailed with: " + data);
                         _this.stopSelf();
                     }
                 });
@@ -68,7 +74,7 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
+        Log.v("T", "Inside onstart");
         Bundle extras = intent.getExtras();
         command = extras.getString("command");
         data = extras.getString("data");

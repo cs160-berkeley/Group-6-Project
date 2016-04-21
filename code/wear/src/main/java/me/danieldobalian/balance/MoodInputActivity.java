@@ -3,6 +3,7 @@ package me.danieldobalian.balance;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -34,12 +35,11 @@ public class MoodInputActivity extends Activity {
                 int mood_scale_value = scale.getProgress();
                 String mood_val = Integer.toString(mood_scale_value);
 
-
-
-                //        Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
-//        sendIntent.putExtra("command", "mood");
-//        sendIntent.putExtra("data", mood_val);
-//        startService(sendIntent);
+                Log.v("T", "Sending mood to watch2phone");
+                Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
+                sendIntent.putExtra("command", "mood");
+                sendIntent.putExtra("data", mood_val);
+                startService(sendIntent);
 
 
 

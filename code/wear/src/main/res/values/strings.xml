@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Balance</string>
     <string name="hello_world">Hello World!</string>
+    <string name="title_activity_mood_input">MoodInputActivity</string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="hello_square">Hello Square World!</string>
+    <string name="title_activity_diet_input">DietInputActivity</string>
+    <string name="title_activity_data_inputted">DataInputtedActivity</string>
 </resources>

@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 
 public class PhoneListenerService extends WearableListenerService {
 
-    //   WearableListenerServices don't need an iBinder or an onStartCommand: they just need an onMessageReceieved.
+    //   WearableListenerServices doesn't need an iBinder or an onStartCommand: they just need an onMessageReceieved.
     private static final String MOOD = "/mood";
     private static final String DIET = "/diet";
 

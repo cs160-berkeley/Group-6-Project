@@ -131,7 +131,7 @@ public class Diet extends AppCompatActivity {
         if (todaysTweets<avgTweetsPerDay) {
             checkQuietFeed();
         }
-        return Math.min(100,50*tweetsPerDay[days-1]/avgTweetsPerDay);
+        return Math.min(100,50*todaysTweets/avgTweetsPerDay);
     }
 
 }

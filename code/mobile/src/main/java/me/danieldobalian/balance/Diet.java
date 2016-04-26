@@ -109,7 +109,29 @@ public class Diet extends AppCompatActivity {
         if (sunlight>=30) {
             checkExerciseReward();
         }
-        return (double) Math.max((double)100,50*sunlight/30);
+        return (double) Math.min((double)100,50*sunlight/30);
+    }
+
+    protected void checkQuietFeed() {
+        boolean unusuallyQuiet = false; //this should be read from history
+        if (unusuallyQuiet) {
+            //queue a lack of online communication warning notification
+        }
+    }
+
+    protected double twitterDataCrunch(int[] tweetsPerDay) {
+        //let tweetsPerDay be tweets on each day over some past number of days, ideally between 7 and 30.
+        double tweets = 0;
+        int days = tweetsPerDay.length;
+        for (int i=0; i<days; i++) {
+            tweets+=tweetsPerDay[i];
+        }
+        double avgTweetsPerDay = tweets/days;
+        int todaysTweets = tweetsPerDay[days-1];
+        if (todaysTweets<avgTweetsPerDay) {
+            checkQuietFeed();
+        }
+        return Math.min(100,50*tweetsPerDay[days-1]/avgTweetsPerDay);
     }
 
 }

@@ -7,14 +7,24 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 
 public class StartScreen extends AppCompatActivity {
+
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "f7ee023048020ae67ddb7fc63fb3647f9a43bf1a";
+    private static final String TWITTER_SECRET = "rUQlX2rR0yxNdGX2USrwSEzJddvchVcdzfG05oXLR7HGxXd3MD";
+
 
     Button tempButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_main);
 
         /* Temp button code for prog3MS2 */

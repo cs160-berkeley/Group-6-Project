@@ -47,10 +47,10 @@ public class Mood extends AppCompatActivity {
     }
 
     // I was thinking that if we are getting true for a few days in a week that might be a bad sign
-    public boolean heart_beat_data(double avg_heart_beat){
+    public boolean abnormal_heart_rate(double avg_heart_beat){
         double x = avg_heart_beat;
         // normal heart rate
-        if (x > 60 && x <= 100)
+        if (x < 60 || x > 100)
         {
             return true;
         }
@@ -60,15 +60,27 @@ public class Mood extends AppCompatActivity {
         }
     }
 
-    //if there is abnormal mood activity for 3 or more days that might be a bad sign
-    public boolean trigger_mood_motif(double[] heart_rate){
-        int abnormal_heart_rate = 0;
+    public double find_heart_score(double[] heart_rate){
+        int abnormal = 0;
+        double heart_score;
         for (int i = 0; i < heart_rate.length; i++){
-            if (heart_beat_data(heart_rate[i]) == true){
-                abnormal_heart_rate++;
+            if (abnormal_heart_rate(heart_rate[i]) == true){
+                abnormal++;
             }
         }
-        if (abnormal_heart_rate >= 3)
+        heart_score = (1-(abnormal/heart_rate.length))*100;
+        return heart_score;
+    }
+
+    //if there is abnormal hearth activity for 3 or more per day that might be a bad sign
+    public boolean trigger_heart_notif(double[] heart_rate){
+        int abnormal = 0;
+        for (int i = 0; i < heart_rate.length; i++){
+            if (abnormal_heart_rate(heart_rate[i]) == true){
+                abnormal++;
+            }
+        }
+        if (abnormal >= 3)
         {
             return true;
         }
@@ -76,6 +88,12 @@ public class Mood extends AppCompatActivity {
         {
             return false;
         }
+    }
+
+    public double final_score(double mood_score, double heart_score, double twitter_score, double diet_score, double light_score){
+        double the_score;
+        the_score = 0.4*mood_score + 0.2*diet_score + 0.2*heart_score + 0.2*twitter_score + 0.2*light_score;
+        return the_score;
     }
 
 }

@@ -63,8 +63,10 @@ public class Privacy extends AppCompatActivity {
                 TwitterApiClient twitterApiClient =
                         TwitterCore.getInstance().getApiClient(session);
 
+
+
                 /* IMPORTANT: Change number for how many tweets you wnat */
-                twitterApiClient.getStatusesService().userTimeline(null, "realDonaldTrump", 2,
+                twitterApiClient.getStatusesService().userTimeline(null, handle, outputStr.length,
                         null, null, false, false, false, true, new Callback<List<Tweet>>() {
                             @Override
                             public void success(Result<List<Tweet>> listResult) {

@@ -39,16 +39,16 @@
       <file leaf-file-name="Privacy.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobile/src/main/java/me/danieldobalian/balance/Privacy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40625">
-              <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.53125">
+              <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1277#1536#0" expanded="true" />
                 <element signature="e#1535#1536#0" expanded="true" />
-                <element signature="e#3422#3423#0" expanded="true" />
-                <element signature="e#3505#3506#0" expanded="true" />
-                <element signature="e#3624#3625#0" expanded="true" />
-                <element signature="e#3675#3676#0" expanded="true" />
+                <element signature="e#3428#3429#0" expanded="true" />
+                <element signature="e#3511#3512#0" expanded="true" />
+                <element signature="e#3630#3631#0" expanded="true" />
+                <element signature="e#3681#3682#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/mobile/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+              <caret line="66" column="67" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="67" />
               <folding>
                 <element signature="e#2297#2315#0" expanded="true" />
               </folding>
@@ -3239,16 +3239,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-          <folding>
-            <element signature="e#2297#2315#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.8.0/c3a7046b4f35b51c5ed9c4137e3ae0527ccfc1a3/retrofit-1.8.0-sources.jar!/retrofit/RestAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -3257,18 +3247,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="67" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="67" />
+          <folding>
+            <element signature="e#2297#2315#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mobile/src/main/java/me/danieldobalian/balance/Privacy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40625">
-          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.53125">
+          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1277#1536#0" expanded="true" />
             <element signature="e#1535#1536#0" expanded="true" />
-            <element signature="e#3422#3423#0" expanded="true" />
-            <element signature="e#3505#3506#0" expanded="true" />
-            <element signature="e#3624#3625#0" expanded="true" />
-            <element signature="e#3675#3676#0" expanded="true" />
+            <element signature="e#3428#3429#0" expanded="true" />
+            <element signature="e#3511#3512#0" expanded="true" />
+            <element signature="e#3630#3631#0" expanded="true" />
+            <element signature="e#3681#3682#0" expanded="true" />
           </folding>
         </state>
       </provider>

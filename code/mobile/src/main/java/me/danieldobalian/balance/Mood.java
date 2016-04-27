@@ -92,7 +92,7 @@ public class Mood extends AppCompatActivity {
 
     public double final_score(double mood_score, double heart_score, double twitter_score, double diet_score, double light_score){
         double the_score;
-        the_score = 0.4*mood_score + 0.2*diet_score + 0.2*heart_score + 0.2*twitter_score + 0.2*light_score;
+        the_score = 0.4*mood_score + 0.2*diet_score + 0.2*heart_score + 0.1*twitter_score + 0.1*light_score;
         return the_score;
     }
 

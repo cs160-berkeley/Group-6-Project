@@ -13,6 +13,17 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/* Heart Rate Links:
+https://gist.github.com/mjohnsullivan/557c2f19ba177312b1d7
+
+http://stackoverflow.com/questions/26489281/how-to-access-heart-rate-sensor-in-android-wearable
+http://stackoverflow.com/questions/24664217/get-heart-rate-from-sensor-samsung-gear-live
+http://developer.android.com/intl/es/reference/android/hardware/SensorListener.html
+https://gist.github.com/gabrielemariotti/d23bfe583e900a4f9276#file-myactivity-java
+http://developer.android.com/intl/es/guide/topics/sensors/sensors_overview.html
+http://stackoverflow.com/questions/25896481/heart-rate-sensor-api-for-android
+ */
+
 public class MoodInputActivity extends Activity {
 
     private TextView mTextView;

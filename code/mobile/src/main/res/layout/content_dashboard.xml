@@ -10,46 +10,55 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Dashboard"
-    tools:showIn="@layout/activity_dashboard">
+    tools:showIn="@layout/activity_dashboard"
+    android:background="#ffffff">
 
 
-    <Button
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Diet Input"
-        android:id="@+id/inputDiet"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mood Input"
-        android:id="@+id/inputMood"
-        android:layout_marginTop="47dp"
-        android:layout_below="@+id/inputDiet"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/inputDiet" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:id="@+id/inputDiet"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/diet"
+            android:layout_alignParentEnd="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send to Dr"
-        android:id="@+id/outputDr"
-        android:layout_marginTop="61dp"
-        android:layout_below="@+id/inputMood"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/inputMood" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:id="@+id/inputMood"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/inputDiet"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/inputDiet"
+            android:background="@drawable/input" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Privacy"
-        android:id="@+id/privacy"
-        android:layout_below="@+id/outputDr"
-        android:layout_marginTop="43dp"
-        android:layout_alignEnd="@+id/outputDr"
-        android:layout_alignParentStart="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:id="@+id/outputDr"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/inputMood"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/inputMood"
+            android:background="@drawable/pdf" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:id="@+id/privacy"
+            android:layout_below="@+id/outputDr"
+            android:layout_marginTop="30dp"
+            android:layout_alignEnd="@+id/outputDr"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/mood" />
+    </LinearLayout>
 
 </RelativeLayout>

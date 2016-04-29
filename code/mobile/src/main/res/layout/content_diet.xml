@@ -13,14 +13,104 @@
     tools:showIn="@layout/activity_diet">
 
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="#Back2Dash"
-        android:id="@+id/back"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="How was your diet today?"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="87dp">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/star1" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/star2" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/star3" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/star4" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/star5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:id="@+id/linearLayout2">
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/meat" />
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/veg" />
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/fruit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout3">
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/alco"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/linearLayout3" />
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/junk" />
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/soda" />
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/caf" />
+    </LinearLayout>
 
 </RelativeLayout>

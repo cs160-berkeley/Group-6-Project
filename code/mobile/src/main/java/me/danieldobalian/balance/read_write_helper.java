@@ -53,9 +53,10 @@ public class read_write_helper {
 
     }
 
-    public String[] readData(int typeData, int last_n, Context context) {
+    public String[] readData(int typeData, int last_n, int return_type, Context context) {
         int dataType = typeData;
         int n = last_n;
+        int type = return_type;
         String file_name = null;
         String[] output = new String[n];
         // Mood
@@ -88,8 +89,10 @@ public class read_write_helper {
             Log.v(each_input[2],"test each input");
             for (int i = 0; i < n; i++) {
                     String[] time_value = each_input[each_input.length - i - 1].split("\\|");
-                    String value = time_value[0];
-                    output[i] = value;
+                    String timestamp = time_value[0];
+                    String value = time_value[1];
+                    if(type==1){output[i] = value;}
+                else if(type==2){output[i] = timestamp;}
             }
             return output;
         }

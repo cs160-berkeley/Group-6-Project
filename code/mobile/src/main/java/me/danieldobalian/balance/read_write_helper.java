@@ -1,6 +1,7 @@
 package me.danieldobalian.balance;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -27,20 +28,21 @@ public class read_write_helper {
         String file_name = null;
         // Mood
         if (dataType == 1) {
-            file_name = "mood_file";
+            file_name = "mood.txt";
         } else if (dataType == 2) {
-            file_name = "diet_file";
+            file_name = "diet.txt";
         } else if (dataType == 3) {
-            file_name = "twitter_file";
+            file_name = "twitter.txt";
         } else if (dataType == 4) {
-            file_name = "heart_file";
+            file_name = "heart.txt";
         } else if (dataType == 5) {
-            file_name = "light_file";
+            file_name = "light.txt";
         }
-        String Edit = formattedDate + "|" + data + ",";
+        String Edit = formattedDate + "|" + data + "," + '\n';
         try {
             FileOutputStream fileOutputStream = context.openFileOutput(file_name, context.MODE_APPEND);
             fileOutputStream.write(Edit.getBytes());
+            fileOutputStream.write('\n');
             fileOutputStream.close();
             Toast.makeText(context.getApplicationContext(), "Input Saved", Toast.LENGTH_LONG).show();
         } catch (FileNotFoundException e) {
@@ -58,31 +60,40 @@ public class read_write_helper {
         String[] output = new String[n];
         // Mood
         if (dataType == 1) {
-            file_name = "mood_file";
+            file_name = "mood.txt";
         } else if (dataType == 2) {
-            file_name = "diet_file";
+            file_name = "diet.txt";
         } else if (dataType == 3) {
-            file_name = "twitter_file";
+            file_name = "twitter.txt";
         } else if (dataType == 4) {
-            file_name = "heart_file";
+            file_name = "heart.txt";
         } else if (dataType == 5) {
-            file_name = "light_file";
+            file_name = "light.txt";
         }
         try {
             String line;
             FileInputStream fileInputStream = context.openFileInput(file_name);
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] each_input = line.split(",");
-                for (int i = 0; i < n - 1; i++) {
-                    String[] time_value = each_input[-i].split("|");
-                    String value = time_value[1];
-                    output[i] += value;
-                }
-                return output;
+            StringBuffer stringBuffer = new StringBuffer();
+            while ((line=bufferedReader.readLine())!=null)
+            {
+                stringBuffer.append(line);
             }
-        } catch (FileNotFoundException e) {
+            String string = stringBuffer.toString();
+            Log.v(string,"string output");
+            String[] each_input = string.split(",");
+            Log.v(each_input[0],"test each input");
+            Log.v(each_input[1],"test each input");
+            Log.v(each_input[2],"test each input");
+            for (int i = 0; i < n; i++) {
+                    String[] time_value = each_input[each_input.length - i - 1].split("\\|");
+                    String value = time_value[0];
+                    output[i] = value;
+            }
+            return output;
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();

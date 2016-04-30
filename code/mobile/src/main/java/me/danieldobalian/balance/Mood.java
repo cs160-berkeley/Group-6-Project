@@ -9,6 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
 public class Mood extends AppCompatActivity {
 
     Button back;
@@ -18,16 +22,17 @@ public class Mood extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood);
 
-//        back = (Button) findViewById(R.id.back);
-//        back.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Intent myIntent = new Intent(Mood.this,
-//                        Dashboard.class);
-//                startActivity(myIntent);
-//            }
-//        });
+        back = (Button) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Mood.this,
+                        Dashboard.class);
+                startActivity(myIntent);
+            }
+        });
+
     }
 
 }

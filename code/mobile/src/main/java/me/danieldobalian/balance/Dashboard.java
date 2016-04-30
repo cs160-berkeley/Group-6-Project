@@ -112,6 +112,6 @@ public class Dashboard extends AppCompatActivity {
     public void sendNotification(View view) {
         String title = "Balance";
         String text = "Hey, is everything going okay? Just checking in!";
-        NotificationHelper.sendTextNotification(view, title, text, this);
+        NotificationHelper.sendTextNotification(title, text, view, this);
     }
 }

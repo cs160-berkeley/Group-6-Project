@@ -1,5 +1,6 @@
 package me.danieldobalian.balance;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,7 +17,7 @@ public class dataHelper {
     public static final int SUNLIGHT_THRESHHOLD = 50;
     public static final int LIGHT_INCREMENT = 15; //in minutes
 
-    protected double dietDataCrunch(boolean inputs[]) {
+    protected double dietDataCrunch(boolean inputs[], View view, Context context) {
         /* let inputs be as follows:
         0 = veggies
         1 = fruits
@@ -30,40 +31,55 @@ public class dataHelper {
         double stars;
         stars = 0;
         for (int i=0;i<7;i++) {
-            if (i<4) {stars+=2;}
-            else {stars--;}
+            if (i<4) {stars+=2;} //+2 stars for healthy choices
+            else {stars--;} //-1 stars for unhealthy choices
         }
+        //stars bounded from 0-5
         stars = Math.max((double) 0, stars);
         stars = Math.min((double) 5,stars);
 
         //check for alcohol abuse
         boolean alcohol = inputs[6];
-        if(alcohol) {checkAlcoholAbuse();}
+        if(alcohol) {checkAlcoholAbuse(view, context);}
 
         //check for health rewards
-        if(stars==(double)5) {checkHealthReward();}
+        if(stars==(double)5) {checkHealthReward(view, context);}
 
         return stars*20;
     };
 
-    protected void checkAlcoholAbuse() {
-        boolean past3DaysAlcohol = false; //should be read from history
+    protected void checkAlcoholAbuse(View view, Context context) {
+
+        boolean past3DaysAlcohol = true; //should be read from history
         if (past3DaysAlcohol) {
             //queue alcohol abuse warning notification
+            NotificationHelper.sendTextNotification(
+                    "Balance Warning",
+                    "You've been drinking a lot lately, are you okay?",
+                    view, context);
         }
     }
 
-    protected void checkHealthReward() {
+    protected void checkHealthReward(View view, Context context) {
         int healthyStreak = 2; //this should be read from history.
+        String streak = "";
+        Boolean send = false;
         switch(healthyStreak){
-            case 2: break; //queue 3 days healthy notification
-            case 6: break; //queue 1 week healthy notification
-            case 13: break; //queue 2 weeks healthy notification
-            case 30: break; //queue 1 month healthy notification
+            case 2: streak = "three days in a row! Congrats!"; send = true;  break; //queue 3 days healthy notification
+            case 6: streak = "one straight week! Amazing!"; send = true; break; //queue 1 week healthy notification
+            case 13: streak = "two whole weeks; that's great!"; send = true; break; //queue 2 weeks healthy notification
+            case 30: streak = "an entire month! You. Are. AWESOME!"; send = true; break; //queue 1 month healthy notification
+        }
+        if(send) {
+            NotificationHelper.sendTextNotification(
+                    "Balance Reward",
+                    "You've eaten healthy every day for " + streak,
+                    view, context
+            );
         }
     }
 
-    protected double lightDataCrunch(int[] light) {
+    protected double lightDataCrunch(int[] light, View view, Context context) {
         int timeIncrement = LIGHT_INCREMENT; //how frequently the sensor checks
         int lightThreshhold = SUNLIGHT_THRESHHOLD; //they were outside at this time
         int sunlight = 0;
@@ -73,32 +89,46 @@ public class dataHelper {
             }
         }
         if (sunlight==0) {
-            checkHomebound();
+            checkHomebound(view, context);
         }
         if (sunlight>=30) {
-            checkExerciseReward();
+            checkExerciseReward(view, context);
         }
         return (double) Math.min((double)100,50*sunlight/30);
     }
 
-    protected void checkHomebound() {
-        boolean past2DaysHomebound = false; //this should be read from history
+    protected void checkHomebound(View view, Context context) {
+        boolean past2DaysHomebound = true; //this should be read from history
         if (past2DaysHomebound) {
             //queue a lack of going outside notification
+            NotificationHelper.sendTextNotification(
+                    "Balance Warning",
+                    "Seems like you haven't been outside in a couple days - are you alright?",
+                    view, context
+            );
         }
     }
 
-    protected void checkExerciseReward() {
+    protected void checkExerciseReward(View view, Context context) {
         int exerciseStreak = 2; //this should be read from history
+        String streak = "";
+        Boolean send = false;
         switch(exerciseStreak){
-            case 2: break; //queue 3 days exercising notification
-            case 6: break; //queue 1 week exercising notification
-            case 13: break; //queue 2 weeks exercising notification
-            case 30: break; //queue 1 month exercising notification
+            case 2: streak = "three days in a row! Congrats!"; send = true;  break; //queue 3 days exercising notification
+            case 6: streak = "one straight week! Amazing!"; send = true; break; //queue 1 week exercising notification
+            case 13: streak = "two whole weeks; that's great!"; send = true; break; //queue 2 weeks exercising notification
+            case 30: streak = "an entire month! You. Are. AWESOME!"; send = true; break; //queue 1 month exercising notification
+        }
+        if(send) {
+            NotificationHelper.sendTextNotification(
+                    "Balance Reward",
+                    "You've been spendting time outside every day for " + streak,
+                    view, context
+            );
         }
     }
 
-    protected double twitterDataCrunch(int[] tweetsPerDay) {
+    protected double twitterDataCrunch(int[] tweetsPerDay, View view, Context context) {
         //let tweetsPerDay be tweets on each day
 	//over the past X days (ideally between 7 and 30)
         double tweets = 0;
@@ -109,15 +139,20 @@ public class dataHelper {
         double avgTweetsPerDay = tweets/days;
         int todaysTweets = tweetsPerDay[days-1];
         if (todaysTweets<avgTweetsPerDay) {
-            checkQuietFeed();
+            checkQuietFeed(view, context);
         }
         return Math.min(100,50*todaysTweets/avgTweetsPerDay);
     }
 
-    protected void checkQuietFeed() {
-        boolean unusuallyQuiet = false; //this should be read from history
+    protected void checkQuietFeed(View view, Context context) {
+        boolean unusuallyQuiet = true; //this should be read from history
         if (unusuallyQuiet) {
             //queue a lack of online communication warning notification
+            NotificationHelper.sendTextNotification(
+                    "Balance Warning",
+                    "You've been quiet on twitter lately - is something wrong?",
+                    view, context
+            );
         }
     }
 
@@ -129,7 +164,7 @@ public class dataHelper {
         return mood_score;
     }
 
-    public boolean trigger_mood_notif(double mood_score1,double mood_score2, double mood_score3){
+    public boolean trigger_mood_notif(double mood_score1,double mood_score2, double mood_score3, View view, Context context){
         double week_mood_average = 50;
 //      if (the mood for 3 days is inclining/declining really badly):
 //          return true;
@@ -165,7 +200,7 @@ public class dataHelper {
     }
 
     //if there is abnormal hearth activity for 3 or more per day that might be a bad sign
-    public boolean trigger_heart_notif(double[] heart_rate){
+    public boolean trigger_heart_notif(double[] heart_rate, View view, Context context){
         int abnormal = 0;
         for (int i = 0; i < heart_rate.length; i++){
             if (abnormal_heart_rate(heart_rate[i]) == true){

@@ -17,7 +17,7 @@ import android.content.Intent;
  * Created by Kevin on 4/29/2016.
  */
 public class NotificationHelper {
-    public static void sendTextNotification(View view, String title, String text, Context caller) {
+    public static void sendTextNotification(String title, String text, View view, Context caller) {
         int notificationId = 002;
         Intent viewIntent = new Intent(caller, StartScreen.class);
         PendingIntent viewPendingIntent = PendingIntent.getActivity(caller, 0, viewIntent, 0);

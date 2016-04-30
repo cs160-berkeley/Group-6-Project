@@ -91,6 +91,7 @@ public class dataHelper {
     light_increment is how often they are collected, sunlight_threshhold is what marks being outside.
     If they got no sun, check to see if they're staying inside too long.
     If they got >30 minutes, see if they're on a streak and encourage them.
+    Return a score based on 30 minutes = score of 50.
     */
     protected double lightDataCrunch(int[] light, View view, Context context) {
         int timeIncrement = LIGHT_INCREMENT; //how frequently the sensor checks
@@ -149,10 +150,9 @@ public class dataHelper {
     //let the last int in the array be the tweets from the past 24 hours
     //if today's number of tweets is less than the average number of tweets over the period,
     //check if that's a pattern, and fire off a warning if so.
-    //I refuse to reward people for tweeting more on principle.
+    //Then return todays number of tweets compared to the average, where avg = 50.
     protected double twitterDataCrunch(int[] tweetsPerDay, View view, Context context) {
-        //let tweetsPerDay be tweets on each day
-	//over the past X days (ideally between 7 and 30)
+        //let tweetsPerDay be tweets on each day over the past X days (ideally between 7 and 30)
         double tweets = 0;
         int days = tweetsPerDay.length;
         for (int i=0; i<days; i++) {
@@ -166,6 +166,8 @@ public class dataHelper {
         return Math.min(100,50*todaysTweets/avgTweetsPerDay);
     }
 
+    //check to see if the user's twitter feed has been abnormally quiet lately
+    // and fire off a warning if so.
     protected void checkQuietFeed(View view, Context context) {
         boolean unusuallyQuiet = true; //this should be read from history
         if (unusuallyQuiet) {
@@ -178,67 +180,68 @@ public class dataHelper {
         }
     }
 
-//This is Nick's portion of the code
-
-    public double get_mood(double happy, double stress, double bored){
-//      expecting happy, stress, and bored in a scale of 0-100
+    //compiles an overall mood score based on slider inputs (assumed to be between 1 and 100)
+    //and then checks their history to see if it should fire off a notification.
+    //Finally, return the mood score.
+    protected double moodDataCrunch(double happy, double stress, double bored, View view, Context context) {
         double mood_score = 0.5 * happy + 0.3 * stress + 0.2 * bored;
+        checkMoodFluctuation(mood_score, view, context);
         return mood_score;
     }
 
-    public boolean trigger_mood_notif(double mood_score1,double mood_score2, double mood_score3, View view, Context context){
-        double week_mood_average = 50;
-//      if (the mood for 3 days is inclining/declining really badly):
-//          return true;
-//      else:
-//          return false;
-        return false;
-    }
-
-    // I was thinking that if we are getting true for a few days in a week that might be a bad sign
-    public boolean abnormal_heart_rate(double avg_heart_beat){
-        double x = avg_heart_beat;
-        // normal heart rate
-        if (x < 60 || x > 100)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
+    //check if on a particularly large upswing or downswing - if so, send notification.
+    public void checkMoodFluctuation(double mood, View view, Context context) {
+        boolean moodIncreasing = true;
+        boolean moodDecreasing = false;
+        if(moodIncreasing) {
+            NotificationHelper.sendTextNotification(
+                    "Balance Notification",
+                    "Seems like you're having a good couple of days! Congrats!",
+                    view, context
+            );
+        } else if (moodDecreasing) {
+            NotificationHelper.sendTextNotification(
+                    "Balance Warning",
+                    "Seems like things aren't going so hot right now... do want to contact your doctor?",
+                    view, context
+            );
         }
     }
 
-    public double find_heart_score(double[] heart_rate){
+    //check if heart rate is within normal bounds; if not, note it, and possibly send a notification.
+    //Then return the percentage of abnormal readings over the course of the day.
+    protected  double heartRateCruncher(double[] heart_rate, View view, Context context) {
         int abnormal = 0;
         double heart_score;
         for (int i = 0; i < heart_rate.length; i++){
-            if (abnormal_heart_rate(heart_rate[i]) == true){
+            if (abnormal_heart_rate(heart_rate[i])){
                 abnormal++;
             }
         }
+
         heart_score = (1-(abnormal/heart_rate.length))*100;
         return heart_score;
     }
 
-    //if there is abnormal hearth activity for 3 or more per day that might be a bad sign
-    public boolean trigger_heart_notif(double[] heart_rate, View view, Context context){
-        int abnormal = 0;
-        for (int i = 0; i < heart_rate.length; i++){
-            if (abnormal_heart_rate(heart_rate[i]) == true){
-                abnormal++;
-            }
-        }
-        if (abnormal >= 3)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
+    protected void checkHeartRate (double heart_score, View view, Context context) {
+        boolean chronicHighHeartRate = false;
+        if (chronicHighHeartRate) {
+            NotificationHelper.sendTextNotification(
+                    "Balance Warning",
+                    "Whoah, your heart rate is all over the place lately! Is something wrong?",
+                    view, context
+            );
         }
     }
 
+    //checks to see if the given heart rate is within normal bounds or not
+    public boolean abnormal_heart_rate(double avg_heart_beat){
+        double x = avg_heart_beat;
+        // normal heart rate
+        return (x < 60 || x > 100);
+    }
+
+    //computes an overall mood score from the component input scores.
     public double final_score(double mood_score, double heart_score, double twitter_score, double diet_score, double light_score){
         double the_score;
         the_score = 0.4*mood_score + 0.2*diet_score + 0.2*heart_score + 0.1*twitter_score + 0.1*light_score;

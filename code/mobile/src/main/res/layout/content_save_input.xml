@@ -9,8 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Mood"
-    tools:showIn="@layout/activity_mood">
+    tools:context=".save_input"
+    tools:showIn="@layout/activity_save_input">
 
 
     <Button
@@ -22,47 +22,32 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
-    <EditText
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_marginTop="32dp"
-        android:gravity="top"
-        android:hint="@string/input_mood"
+        android:text="Write"
+        android:id="@+id/button3"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Input Mood"
-        android:id="@+id/button"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:onClick="writeMessage"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Read"
-        android:id="@+id/button2"
-        android:layout_below="@+id/button"
+        android:id="@+id/button4"
+        android:layout_below="@+id/button3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:onClick="readMessage"
-        />
+        android:layout_marginTop="50dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World"
-        android:id="@+id/textView"
-        android:layout_below="@+id/button2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="58dp"
-        android:textAppearance="?android:textAppearanceLarge"/>
+        android:layout_marginTop="139dp" />
 
 
 </RelativeLayout>

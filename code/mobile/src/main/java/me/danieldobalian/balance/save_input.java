@@ -23,19 +23,18 @@ import java.util.Calendar;
 
 public class save_input extends AppCompatActivity {
 
-    Button back;
-    EditText editText;
+    Button write;
+    Button read;
     TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood);
-        editText = (EditText) findViewById(R.id.editText);
-        textView = (TextView) findViewById(R.id.textView);
+        textView = (TextView) findViewById(R.id.textView2);
         textView.setVisibility(View.GONE);
-        back = (Button) findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
+        write = (Button) findViewById(R.id.button3);
+        write.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -70,7 +69,7 @@ public class save_input extends AppCompatActivity {
         else if (dataType == 5){
             file_name = "light_file";
         }
-        String Edit = formattedDate +"|"+data+ ",";
+        String Edit = formattedDate + "|" + data + ",";
         try {
             FileOutputStream fileOutputStream = openFileOutput(file_name, MODE_APPEND);
             fileOutputStream.write(Edit.getBytes());
@@ -89,6 +88,7 @@ public class save_input extends AppCompatActivity {
         int dataType = typeData;
         int n = last_n;
         String file_name = null;
+        String[] output = null;
         // Mood
         if (dataType == 1){
             file_name = "mood_file";
@@ -116,6 +116,7 @@ public class save_input extends AppCompatActivity {
                 for(int i = 0; i < n-1; i++){
                     String[] time_value = each_input[-i].split("|");
                     String value = time_value[1];
+                    output[i] += value;
                 }
             }
         }

@@ -14,9 +14,13 @@ import java.lang.Math.*;
 public class dataHelper {
 
 //This is Kevin's portion of the code
-    public static final int SUNLIGHT_THRESHHOLD = 50;
-    public static final int LIGHT_INCREMENT = 15; //in minutes
+    public static final int SUNLIGHT_THRESHHOLD = 50; //value of a light reading that means "was outside when taken"
+    public static final int LIGHT_INCREMENT = 15; //time in minutes between light readings
 
+    //Call this on an array of booleans representing their diet input for the day as follows
+    //Input options are represented as a binary, so this should be simple
+    //if they've been drinking, check if it's a problem and if so shoot off a warning.
+    //if they've been eating healthy, check if they're on a streak and if so send encouragement.
     protected double dietDataCrunch(boolean inputs[], View view, Context context) {
         /* let inputs be as follows:
         0 = veggies
@@ -48,8 +52,9 @@ public class dataHelper {
         return stars*20;
     };
 
+    //assuming they drank alcohol today, check if they've gotten drunk the last 3 days as well.
+    //if so, fire off a warning notification.
     protected void checkAlcoholAbuse(View view, Context context) {
-
         boolean past3DaysAlcohol = true; //should be read from history
         if (past3DaysAlcohol) {
             //queue alcohol abuse warning notification
@@ -60,8 +65,10 @@ public class dataHelper {
         }
     }
 
+    //assuming they ate healthy today, check if they're on a healthy eating streak.
+    //if so, fire off an encouraging notification.
     protected void checkHealthReward(View view, Context context) {
-        int healthyStreak = 2; //this should be read from history.
+        int healthyStreak = 2; //Number of previous days in a row they got 5 stars
         String streak = "";
         Boolean send = false;
         switch(healthyStreak){
@@ -79,6 +86,12 @@ public class dataHelper {
         }
     }
 
+    /*
+    Call this function on an array of light readings presented as ints over a day;
+    light_increment is how often they are collected, sunlight_threshhold is what marks being outside.
+    If they got no sun, check to see if they're staying inside too long.
+    If they got >30 minutes, see if they're on a streak and encourage them.
+    */
     protected double lightDataCrunch(int[] light, View view, Context context) {
         int timeIncrement = LIGHT_INCREMENT; //how frequently the sensor checks
         int lightThreshhold = SUNLIGHT_THRESHHOLD; //they were outside at this time
@@ -97,6 +110,8 @@ public class dataHelper {
         return (double) Math.min((double)100,50*sunlight/30);
     }
 
+    //Assuming they didn't leave the house today, check if it's a pattern
+    //If so, fire off a warning
     protected void checkHomebound(View view, Context context) {
         boolean past2DaysHomebound = true; //this should be read from history
         if (past2DaysHomebound) {
@@ -109,6 +124,8 @@ public class dataHelper {
         }
     }
 
+    //assuming they were outside for at least 30 minutes today, check if they're on a streak
+    //if they are, fire off some encouragement
     protected void checkExerciseReward(View view, Context context) {
         int exerciseStreak = 2; //this should be read from history
         String streak = "";
@@ -128,6 +145,11 @@ public class dataHelper {
         }
     }
 
+    //call this function on an array ints where each int as the number of tweets in a 24-hour period
+    //let the last int in the array be the tweets from the past 24 hours
+    //if today's number of tweets is less than the average number of tweets over the period,
+    //check if that's a pattern, and fire off a warning if so.
+    //I refuse to reward people for tweeting more on principle.
     protected double twitterDataCrunch(int[] tweetsPerDay, View view, Context context) {
         //let tweetsPerDay be tweets on each day
 	//over the past X days (ideally between 7 and 30)

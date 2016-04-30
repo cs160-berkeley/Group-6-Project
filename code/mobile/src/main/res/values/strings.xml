@@ -7,4 +7,5 @@
     <string name="title_activity_mood">Mood</string>
     <string name="title_activity_export">export</string>
     <string name="input_mood">Please Input Your Happiness (1-10): </string>
+    <string name="title_activity_save_input">save_input</string>
 </resources>

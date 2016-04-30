@@ -39,6 +39,10 @@
         <activity
             android:name=".export"
             android:label="@string/title_activity_export"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".save_input"
+            android:label="@string/title_activity_save_input"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

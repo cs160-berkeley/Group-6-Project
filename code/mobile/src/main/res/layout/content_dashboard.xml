@@ -13,10 +13,10 @@
     tools:showIn="@layout/activity_dashboard"
     android:background="#ffffff">
 
-    <com.jjoe64.graphview.GraphView
-        android:layout_width="310dip"
-        android:layout_height="180dip"
-        android:id="@+id/graph" />
+    <!--<com.jjoe64.graphview.GraphView-->
+        <!--android:layout_width="310dip"-->
+        <!--android:layout_height="180dip"-->
+        <!--android:id="@+id/graph" />-->
 
     <LinearLayout
         android:orientation="vertical"
@@ -25,11 +25,16 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true">
 
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="325dip"
+            android:layout_height="180dip"
+            android:id="@+id/graph" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="70dp"
             android:id="@+id/inputDiet"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="35dp"
             android:layout_alignParentStart="true"
             android:background="@drawable/diet"
             android:layout_alignParentEnd="true" />
@@ -38,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:id="@+id/inputMood"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="0dp"
             android:layout_below="@+id/inputDiet"
             android:layout_alignParentStart="true"
             android:layout_alignEnd="@+id/inputDiet"
@@ -48,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:id="@+id/outputDr"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="0dp"
             android:layout_below="@+id/inputMood"
             android:layout_alignParentStart="true"
             android:layout_alignEnd="@+id/inputMood"
@@ -59,7 +64,7 @@
             android:layout_height="75dp"
             android:id="@+id/privacy"
             android:layout_below="@+id/outputDr"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="0dp"
             android:layout_alignEnd="@+id/outputDr"
             android:layout_alignParentStart="true"
             android:background="@drawable/mood" />

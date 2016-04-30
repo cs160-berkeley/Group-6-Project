@@ -1,15 +1,6 @@
 package me.danieldobalian.balance;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.content.Context;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -21,31 +12,12 @@ import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class save_input extends AppCompatActivity {
+/**
+ * Created by nicholas on 4/30/16.
+ */
+public class read_write_helper {
 
-    Button write;
-    Button read;
-    TextView textView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mood);
-        textView = (TextView) findViewById(R.id.textView2);
-        textView.setVisibility(View.GONE);
-        write = (Button) findViewById(R.id.button3);
-        write.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(save_input.this,
-                        Dashboard.class);
-                startActivity(myIntent);
-            }
-        });
-    }
-
-    public void writeData(String data,int typeData)
+    public void writeData(String data,int typeData, Context context)
     {
 //      String Input = editText.getText().toString();
         Calendar c = Calendar.getInstance();
@@ -71,10 +43,10 @@ public class save_input extends AppCompatActivity {
         }
         String Edit = formattedDate + "|" + data + ",";
         try {
-            FileOutputStream fileOutputStream = openFileOutput(file_name, MODE_APPEND);
+            FileOutputStream fileOutputStream = context.openFileOutput(file_name, context.MODE_APPEND);
             fileOutputStream.write(Edit.getBytes());
             fileOutputStream.close();
-            Toast.makeText(getApplicationContext(), "Input Saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(context.getApplicationContext(), "Input Saved", Toast.LENGTH_LONG).show();
         }
         catch (FileNotFoundException e){
             e.printStackTrace();
@@ -84,7 +56,7 @@ public class save_input extends AppCompatActivity {
 
     }
 
-    public void readData(int typeData, int last_n){
+    public void readData(int typeData, int last_n, Context context){
         int dataType = typeData;
         int n = last_n;
         String file_name = null;
@@ -107,7 +79,7 @@ public class save_input extends AppCompatActivity {
         }
         try {
             String line;
-            FileInputStream fileInputStream = openFileInput(file_name);
+            FileInputStream fileInputStream = context.openFileInput(file_name);
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             while ((line=bufferedReader.readLine())!=null)
@@ -127,5 +99,4 @@ public class save_input extends AppCompatActivity {
         }
 
     }
-
 }

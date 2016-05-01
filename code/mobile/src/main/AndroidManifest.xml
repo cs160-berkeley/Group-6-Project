@@ -64,6 +64,9 @@
             android:name=".PhoneToWatchService"
             android:enabled="true"
             android:exported="true"></service>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="f7ee023048020ae67ddb7fc63fb3647f9a43bf1a" />
     </application>
 
 </manifest>

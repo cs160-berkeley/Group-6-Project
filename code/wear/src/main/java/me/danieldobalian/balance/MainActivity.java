@@ -4,13 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.BoxInsetLayout;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import android.content.Context;
+import android.widget.Toast;
 
 public class MainActivity extends WearableActivity {
 
@@ -23,6 +29,10 @@ public class MainActivity extends WearableActivity {
     Button mood;
     Button diet;
 
+    //Sensor and SensorManager
+    private static final String TAG = "MainActivity";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +40,13 @@ public class MainActivity extends WearableActivity {
         setAmbientEnabled();
         mood = (Button) findViewById(R.id.mood);
         diet = (Button) findViewById(R.id.diet);
+
+        /* Sensor Code */
+//        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+//        mSensorManager.registerListener(mSensorListener, mSensorManager
+//                .getDefaultSensor(Sensor.TYPE_HEART_RATE), SensorManager.SENSOR_DELAY_NORMAL);
+
+        performReading();
 
         mood.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,4 +110,48 @@ public class MainActivity extends WearableActivity {
             mClockView.setVisibility(View.GONE);
         }
     }
+
+    /* Sensor code */
+    /* Heart Rate Links:
+    https://gist.github.com/mjohnsullivan/557c2f19ba177312b1d7
+    http://stackoverflow.com/questions/26489281/how-to-access-heart-rate-sensor-in-android-wearable
+    http://stackoverflow.com/questions/24664217/get-heart-rate-from-sensor-samsung-gear-live
+    http://developer.android.com/intl/es/reference/android/hardware/SensorListener.html
+    https://gist.github.com/gabrielemariotti/d23bfe583e900a4f9276#file-myactivity-java
+    http://developer.android.com/intl/es/guide/topics/sensors/sensors_overview.html
+    http://stackoverflow.com/questions/25896481/heart-rate-sensor-api-for-android
+    */
+    public void performReading() {
+        SensorManager mSensorManager = ((SensorManager)getSystemService(SENSOR_SERVICE));
+        Sensor mHeartRateSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE);
+        Sensor mLightSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+
+        mSensorManager.registerListener((SensorEventListener) this,
+                mHeartRateSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener((SensorEventListener) this,
+                mLightSensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        Log.d(TAG, "onAccuracyChanged - accuracy: " + accuracy);
+    }
+
+    public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_HEART_RATE) {
+            String msg = "" + (int)event.values[0];
+            Toast.makeText(getApplicationContext(), "Heart Rate: " + event.values[0],
+                    Toast.LENGTH_SHORT).show();
+            Log.d(TAG, msg);
+        }
+        else if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
+            String msg = "Count: " + (int)event.values[0];
+            Toast.makeText(getApplicationContext(), "Light: " + event.values[0],
+                    Toast.LENGTH_SHORT).show();
+            Log.d(TAG, msg);
+        }
+        else
+            Log.d(TAG, "Unknown sensor type");
+    }
+
+
 }

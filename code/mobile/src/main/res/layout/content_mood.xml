@@ -13,14 +13,152 @@
     tools:showIn="@layout/activity_mood">
 
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="#Back2Dash"
-        android:id="@+id/back"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="How was your diet today?"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_below="@+id/linearLayout5"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="34dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/boredom"
+            android:src="@drawable/boredom"
+            android:layout_weight="1" />
+
+        <SeekBar
+            android:layout_width="100dp"
+            android:layout_height="15dp"
+            android:id="@+id/boredomslide"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:thumb="@drawable/thumb2"
+            android:progressDrawable="@drawable/prog2"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/fun"
+            android:src="@drawable/fun"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout6"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/stressed"
+            android:src="@drawable/sad"
+            android:layout_weight="1" />
+
+        <SeekBar
+            android:layout_width="100dp"
+            android:layout_height="15dp"
+            android:id="@+id/stressedslide"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:thumb="@drawable/thumb2"
+            android:progressDrawable="@drawable/prog2" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/relaxed"
+            android:src="@drawable/relaxed"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sad"
+            android:src="@drawable/sad"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1" />
+
+        <SeekBar
+            android:layout_width="100dp"
+            android:layout_height="15dp"
+            android:id="@+id/happyslide"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:thumb="@drawable/thumb2"
+            android:progressDrawable="@drawable/prog2"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/happy"
+            android:src="@drawable/happy"
+            android:layout_alignTop="@+id/sad"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="58dp"
+        android:id="@+id/linearLayout4"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:paddingRight="50dp">
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/button2"
+        android:background="#EB5757"
+        android:text="Next"
+        android:layout_alignTop="@+id/button"
+        android:layout_toEndOf="@+id/button" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/button"
+        android:layout_marginBottom="27dp"
+        android:background="#ffffff"
+        android:text="Skip"
+        android:layout_above="@+id/linearLayout4"
+        android:layout_alignStart="@+id/linearLayout4"
+        android:layout_marginStart="23dp" />
 
 </RelativeLayout>

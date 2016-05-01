@@ -33,7 +33,12 @@ public class test extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 read_write_helper rwh = new read_write_helper();
-                rwh.writeData("50",1,test.this);
+                int[] array = {50,20,30};
+                int[] array2 = {10,10,10};
+                int[] array3 = {20,20,20};
+                rwh.writeDataTweet(array,test.this);
+                rwh.writeDataTweet(array2,test.this);
+                rwh.writeDataTweet(array3,test.this);
             }
         });
 
@@ -42,11 +47,10 @@ public class test extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 read_write_helper rwh = new read_write_helper();
-                String[] a = rwh.readData(1,3,test.this);
+                String[] a = rwh.readData(3,3,1,test.this);
                 textView.setText(a[0]);
                 textView2.setText(a[1]);
                 textView3.setText(a[2]);
-                textView.setVisibility(View.VISIBLE);
             }
         });
 

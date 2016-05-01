@@ -1,17 +1,9 @@
 package me.danieldobalian.balance;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
-import java.lang.Math.*;
 
-public class DataHelper {
+public class dataHelper {
 
 //This is Kevin's portion of the code
     public static final int SUNLIGHT_THRESHHOLD = 50; //value of a light reading that means "was outside when taken"
@@ -20,7 +12,7 @@ public class DataHelper {
     public static final int DIET_STREAK = 2;
     public static final boolean HOMEBOUND_FLAG = true;
     public static final int EXERCISE_STREAK = 6;
-    public static final boolean QUIET_TWITTER = true;
+    public static final boolean TWITTER_FLAG = true;
     public static final boolean MOOD_INCREASING = true;
     public static final boolean MOOD_DECREASING = false;
     public static final boolean HEARTRATE_FLAG = true;
@@ -57,14 +49,15 @@ public class DataHelper {
         //check for health rewards
         if(stars==(double)5) {checkHealthReward(view, context);}
 //WRITE
-        //read_write_helper.writeData(Double.toString(stars),2,context);
+//      read_write_helper.writeData(Double.toString(stars),2,context);
         return stars*20;
     };
 
     //assuming they drank alcohol today, check if they've gotten drunk the last 3 days as well.
     //if so, fire off a warning notification.
     protected void checkAlcoholAbuse(View view, Context context) {
-//READ  boolean past3DaysAlcohol = read_write_helper.read
+//READ
+//      boolean past3DaysAlcohol = read_write_helper.readData(2,3,1,context);
         boolean past3DaysAlcohol = ALCOHOL_FLAG; //should be read from history
         if (past3DaysAlcohol) {
             //queue alcohol abuse warning notification
@@ -79,6 +72,8 @@ public class DataHelper {
     //assuming they ate healthy today, check if they're on a healthy eating streak.
     //if so, fire off an encouraging notification.
     protected void checkHealthReward(View view, Context context) {
+// READ
+//      int healthyStreak = read_write_helper.readData(2,30,1,context);
         int healthyStreak = DIET_STREAK; //Number of previous days in a row they got 5 stars
         String streak = "";
         Boolean send = false;
@@ -114,6 +109,8 @@ public class DataHelper {
                 sunlight+=timeIncrement;
             }
         }
+//WRITE
+//      read_write_helper.writeData(Double.toString(Integer.toString(sunlight),5,context);
         if (sunlight==0) {
             checkHomebound(view, context);
         }
@@ -126,6 +123,8 @@ public class DataHelper {
     //Assuming they didn't leave the house today, check if it's a pattern
     //If so, fire off a warning
     protected void checkHomebound(View view, Context context) {
+// READ
+//      boolean past2DaysHomebound = read_write_helper.readData(5,2,1,context);
         boolean past2DaysHomebound = HOMEBOUND_FLAG; //this should be read from history
         if (past2DaysHomebound) {
             //queue a lack of going outside notification
@@ -141,6 +140,8 @@ public class DataHelper {
     //assuming they were outside for at least 30 minutes today, check if they're on a streak
     //if they are, fire off some encouragement
     protected void checkExerciseReward(View view, Context context) {
+// READ
+//      int exerciseStreak = read_write_helper.readData(5,30,1,context);
         int exerciseStreak = EXERCISE_STREAK; //this should be read from history
         String streak = "";
         Boolean send = false;
@@ -174,6 +175,8 @@ public class DataHelper {
         }
         double avgTweetsPerDay = tweets/days;
         int todaysTweets = tweetsPerDay[days-1];
+//WRITE
+//      read_write_helper.writeData(Integer.toString(todaysTweets),3,context);
         if (todaysTweets<avgTweetsPerDay) {
             checkQuietFeed(view, context);
         }
@@ -183,7 +186,9 @@ public class DataHelper {
     //check to see if the user's twitter feed has been abnormally quiet lately
     // and fire off a warning if so.
     protected void checkQuietFeed(View view, Context context) {
-        boolean unusuallyQuiet = QUIET_TWITTER; //this should be read from history
+// READ
+//      int exerciseStreak = read_write_helper.readData(3,30,1,context);
+        boolean unusuallyQuiet = TWITTER_FLAG; //this should be read from history
         if (unusuallyQuiet) {
             //queue a lack of online communication warning notification
             NotificationHelper.sendTextNotification(
@@ -200,12 +205,17 @@ public class DataHelper {
     //Finally, return the mood score.
     protected double moodDataCrunch(double happy, double stress, double bored, View view, Context context) {
         double mood_score = 0.5 * happy + 0.3 * stress + 0.2 * bored;
+//WRITE
+//      read_write_helper.writeData(Double.toString(mood_score),1,context);
         checkMoodFluctuation(mood_score, view, context);
         return mood_score;
     }
 
     //check if on a particularly large upswing or downswing - if so, send notification.
     public void checkMoodFluctuation(double mood, View view, Context context) {
+//READ
+//      boolean moodIncreasting = read
+//      boolean moodDecreasing = read
         boolean moodIncreasing = MOOD_INCREASING;
         boolean moodDecreasing = MOOD_DECREASING;
         if(moodIncreasing) {
@@ -235,12 +245,16 @@ public class DataHelper {
                 abnormal++;
             }
         }
-
         heart_score = (1-(abnormal/heart_rate.length))*100;
+// WRITE
+//      read_write_helper.writeData(Double.toString(heart_score),4,context);
+        checkHeartRate(heart_score, view, context);
         return heart_score;
     }
 
     protected void checkHeartRate (double heart_score, View view, Context context) {
+// READ
+//      int exerciseStreak = read_write_helper.readData(4,30,1,context);
         boolean chronicHighHeartRate = HEARTRATE_FLAG;
         if (chronicHighHeartRate) {
             NotificationHelper.sendTextNotification(
@@ -263,6 +277,8 @@ public class DataHelper {
     public double final_score(double mood_score, double heart_score, double twitter_score, double diet_score, double light_score){
         double the_score;
         the_score = 0.4*mood_score + 0.2*diet_score + 0.2*heart_score + 0.1*twitter_score + 0.1*light_score;
+// WRITE
+//      read_write_helper.writeData(Double.toString(the_score),?,context);
         return the_score;
     }
 

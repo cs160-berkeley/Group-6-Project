@@ -295,18 +295,17 @@ public class dataHelper {
         return the_score;
     }
 
-    public static double[] get_last_n_final_scores(int n) {
+    public static double[] get_last_n_final_scores(int n, Context context) {
         double[] mood_score = new double[n];
         double[] heart_score = new double[n];
         double[] twitter_score = new double[n];
         double[] diet_score = new double[n];
         double[] light_score = new double[n];
-        return new double[] {1,2,3,4};
-    }
+        String[] lastNDiets = read_write_helper.readData(3,n,1,context);
+        for(int i=0;i<n;i++){
 
-    public static void main() {
-        double j = moodDataCrunch((double)50,(double)50,(double)50,false,null,null);
-        System.out.print(Double.toString(j));
+        }
+        return new double[] {1,2,3,4};
     }
 
 

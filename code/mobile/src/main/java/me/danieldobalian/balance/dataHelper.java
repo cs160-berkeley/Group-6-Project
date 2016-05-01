@@ -297,15 +297,45 @@ public class dataHelper {
 
     public static double[] get_last_n_final_scores(int n, Context context) {
         double[] mood_score = new double[n];
-        double[] heart_score = new double[n];
-        double[] twitter_score = new double[n];
-        double[] diet_score = new double[n];
-        double[] light_score = new double[n];
-        String[] lastNDiets = read_write_helper.readData(3,n,1,context);
+        String[] lastNMoods = read_write_helper.readData(2,n,1,context);
         for(int i=0;i<n;i++){
-
+            double[] inputs = read_write_helper.parseMood(lastNMoods[i]);
+            mood_score[i] = moodDataCrunch(inputs[0],inputs[1],inputs[2],false,null,null);
         }
-        return new double[] {1,2,3,4};
+
+        double[] diet_score = new double[n];
+        String[] lastNDiets = read_write_helper.readData(2,n,1,context);
+        for(int i=0;i<n;i++){
+            boolean[] inputs = read_write_helper.parseFood(lastNDiets[i]);
+            diet_score[i] = dietDataCrunch(inputs,false,null,null);
+        }
+
+        double[] twitter_score = new double[n];
+        String[] lastNTwitters = read_write_helper.readData(2,n,1,context);
+        for(int i=0;i<n;i++){
+            int[] inputs = read_write_helper.parseTwitter(lastNTwitters[i]);
+            twitter_score[i] = twitterDataCrunch(inputs,false,null,null);
+        }
+
+        double[] heart_score = new double[n];
+        String[] lastNHeartbeats = read_write_helper.readData(2,n,1,context);
+        for(int i=0;i<n;i++){
+            double[] inputs = read_write_helper.parseHeart(lastNHeartbeats[i]);
+            heart_score[i] = heartRateCruncher(inputs,false,null,null);
+        }
+
+        double[] light_score = new double[n];
+        String[] lastNLights = read_write_helper.readData(4,n,1,context);
+        for(int i=0;i<n;i++){
+            int[] inputs = read_write_helper.parseLight(lastNLights[i]);
+            light_score[i] = lightDataCrunch(inputs,false,null,null);
+        }
+
+        double[] lastNScores = new double[n];
+        for(int i=0;i<n;i++){
+            lastNScores[n] = final_score(mood_score[i],heart_score[i],twitter_score[i],diet_score[i],light_score[i]);
+        }
+        return lastNScores;
     }
 
 

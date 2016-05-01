@@ -11,11 +11,19 @@ import android.view.View;
 import android.widget.Button;
 import java.lang.Math.*;
 
-public class dataHelper {
+public class DataHelper {
 
 //This is Kevin's portion of the code
     public static final int SUNLIGHT_THRESHHOLD = 50; //value of a light reading that means "was outside when taken"
     public static final int LIGHT_INCREMENT = 15; //time in minutes between light readings
+    public static final boolean ALCOHOL_FLAG = true;
+    public static final int DIET_STREAK = 2;
+    public static final boolean HOMEBOUND_FLAG = true;
+    public static final int EXERCISE_STREAK = 6;
+    public static final boolean QUIET_TWITTER = true;
+    public static final boolean MOOD_INCREASING = true;
+    public static final boolean MOOD_DECREASING = false;
+    public static final boolean HEARTRATE_FLAG = true;
 
     //Call this on an array of booleans representing their diet input for the day as follows
     //Input options are represented as a binary, so this should be simple
@@ -48,17 +56,20 @@ public class dataHelper {
 
         //check for health rewards
         if(stars==(double)5) {checkHealthReward(view, context);}
-
+//WRITE
+        //read_write_helper.writeData(Double.toString(stars),2,context);
         return stars*20;
     };
 
     //assuming they drank alcohol today, check if they've gotten drunk the last 3 days as well.
     //if so, fire off a warning notification.
     protected void checkAlcoholAbuse(View view, Context context) {
-        boolean past3DaysAlcohol = true; //should be read from history
+//READ  boolean past3DaysAlcohol = read_write_helper.read
+        boolean past3DaysAlcohol = ALCOHOL_FLAG; //should be read from history
         if (past3DaysAlcohol) {
             //queue alcohol abuse warning notification
             NotificationHelper.sendTextNotification(
+                    001,
                     "Balance Warning",
                     "You've been drinking a lot lately, are you okay?",
                     view, context);
@@ -68,7 +79,7 @@ public class dataHelper {
     //assuming they ate healthy today, check if they're on a healthy eating streak.
     //if so, fire off an encouraging notification.
     protected void checkHealthReward(View view, Context context) {
-        int healthyStreak = 2; //Number of previous days in a row they got 5 stars
+        int healthyStreak = DIET_STREAK; //Number of previous days in a row they got 5 stars
         String streak = "";
         Boolean send = false;
         switch(healthyStreak){
@@ -79,6 +90,7 @@ public class dataHelper {
         }
         if(send) {
             NotificationHelper.sendTextNotification(
+                    002,
                     "Balance Reward",
                     "You've eaten healthy every day for " + streak,
                     view, context
@@ -114,10 +126,11 @@ public class dataHelper {
     //Assuming they didn't leave the house today, check if it's a pattern
     //If so, fire off a warning
     protected void checkHomebound(View view, Context context) {
-        boolean past2DaysHomebound = true; //this should be read from history
+        boolean past2DaysHomebound = HOMEBOUND_FLAG; //this should be read from history
         if (past2DaysHomebound) {
             //queue a lack of going outside notification
             NotificationHelper.sendTextNotification(
+                    003,
                     "Balance Warning",
                     "Seems like you haven't been outside in a couple days - are you alright?",
                     view, context
@@ -128,7 +141,7 @@ public class dataHelper {
     //assuming they were outside for at least 30 minutes today, check if they're on a streak
     //if they are, fire off some encouragement
     protected void checkExerciseReward(View view, Context context) {
-        int exerciseStreak = 2; //this should be read from history
+        int exerciseStreak = EXERCISE_STREAK; //this should be read from history
         String streak = "";
         Boolean send = false;
         switch(exerciseStreak){
@@ -139,6 +152,7 @@ public class dataHelper {
         }
         if(send) {
             NotificationHelper.sendTextNotification(
+                    003,
                     "Balance Reward",
                     "You've been spendting time outside every day for " + streak,
                     view, context
@@ -169,10 +183,11 @@ public class dataHelper {
     //check to see if the user's twitter feed has been abnormally quiet lately
     // and fire off a warning if so.
     protected void checkQuietFeed(View view, Context context) {
-        boolean unusuallyQuiet = true; //this should be read from history
+        boolean unusuallyQuiet = QUIET_TWITTER; //this should be read from history
         if (unusuallyQuiet) {
             //queue a lack of online communication warning notification
             NotificationHelper.sendTextNotification(
+                    004,
                     "Balance Warning",
                     "You've been quiet on twitter lately - is something wrong?",
                     view, context
@@ -191,16 +206,18 @@ public class dataHelper {
 
     //check if on a particularly large upswing or downswing - if so, send notification.
     public void checkMoodFluctuation(double mood, View view, Context context) {
-        boolean moodIncreasing = true;
-        boolean moodDecreasing = false;
+        boolean moodIncreasing = MOOD_INCREASING;
+        boolean moodDecreasing = MOOD_DECREASING;
         if(moodIncreasing) {
             NotificationHelper.sendTextNotification(
+                    005,
                     "Balance Notification",
                     "Seems like you're having a good couple of days! Congrats!",
                     view, context
             );
         } else if (moodDecreasing) {
             NotificationHelper.sendTextNotification(
+                    005,
                     "Balance Warning",
                     "Seems like things aren't going so hot right now... do want to contact your doctor?",
                     view, context
@@ -224,9 +241,10 @@ public class dataHelper {
     }
 
     protected void checkHeartRate (double heart_score, View view, Context context) {
-        boolean chronicHighHeartRate = false;
+        boolean chronicHighHeartRate = HEARTRATE_FLAG;
         if (chronicHighHeartRate) {
             NotificationHelper.sendTextNotification(
+                    006,
                     "Balance Warning",
                     "Whoah, your heart rate is all over the place lately! Is something wrong?",
                     view, context

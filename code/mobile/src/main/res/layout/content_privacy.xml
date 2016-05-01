@@ -13,16 +13,84 @@
     tools:showIn="@layout/activity_privacy">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Privacy Settings"
+        android:id="@+id/textView6"
+        android:layout_marginTop="33dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/textView6"
+        android:id="@+id/linearLayout8">
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/heart"
+            android:layout_below="@+id/twitter"
+            android:layout_alignStart="@+id/twitter" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/twitter"
+            android:layout_below="@+id/light"
+            android:layout_alignStart="@+id/light" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/light"
+            android:layout_below="@+id/textView6"
+            android:layout_alignEnd="@+id/textView6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/linearLayout8"
+        android:layout_toStartOf="@+id/linearLayout8"
+        android:layout_marginEnd="71dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="heart"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="twitter"
+            android:id="@+id/textView4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="light"
+            android:id="@+id/textView5" />
+    </LinearLayout>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="#Back2Dash"
-        android:id="@+id/back"
+        android:text="Save"
+        android:id="@+id/button"
+        android:layout_marginBottom="35dp"
+        android:background="#EB5757"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-
+        android:layout_toStartOf="@+id/linearLayout8" />
 
 </RelativeLayout>

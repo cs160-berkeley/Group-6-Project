@@ -19,6 +19,7 @@ public class Dashboard extends AppCompatActivity {
     Button inputMood;
     Button outputDr;
     Button privacy;
+    dataHelper helper;
 
 
     @Override
@@ -84,9 +85,22 @@ public class Dashboard extends AppCompatActivity {
         graph.addSeries(series);
 
         StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
-        staticLabelsFormatter.setHorizontalLabels(new String[] {"0","1","2","3","4"});
-        staticLabelsFormatter.setVerticalLabels(new String[] {"Neg", "Avg", "Pos"});
+        staticLabelsFormatter.setHorizontalLabels(new String[]{"0", "1", "2", "3", "4"});
+        staticLabelsFormatter.setVerticalLabels(new String[]{"Neg", "Avg", "Pos"});
         graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
+        helper = new dataHelper();
+
+
+        //calls for light sensor, twitter, and heart rate -> do not know what to pass for view
+
+
+        //helper.lightDataCrunch([1,2,3], , getBaseContext());
+        //helper.twitterDataCrunch([1,2,3], , getBaseContext());
+        //helper.heartRateCruncher([1,2,3], , getBaseContext());
+
+
+
+
     }
 
     @Override

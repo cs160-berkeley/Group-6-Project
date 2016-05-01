@@ -46,7 +46,8 @@
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
             android:thumb="@drawable/thumb2"
-            android:progressDrawable="@drawable/prog2"/>
+            android:progressDrawable="@drawable/prog2"
+            android:max="5" />
 
         <ImageView
             android:layout_width="50dp"
@@ -79,7 +80,8 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:thumb="@drawable/thumb2"
-            android:progressDrawable="@drawable/prog2" />
+            android:progressDrawable="@drawable/prog2"
+            android:max="5" />
 
         <ImageView
             android:layout_width="50dp"
@@ -115,7 +117,8 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:thumb="@drawable/thumb2"
-            android:progressDrawable="@drawable/prog2"/>
+            android:progressDrawable="@drawable/prog2"
+            android:max="5" />
 
         <ImageView
             android:layout_width="50dp"
@@ -144,21 +147,20 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:id="@+id/button2"
+        android:id="@+id/next"
         android:background="#EB5757"
         android:text="Next"
-        android:layout_alignTop="@+id/button"
-        android:layout_toEndOf="@+id/button" />
+        android:layout_alignTop="@+id/skip"
+        android:layout_alignEnd="@+id/linearLayout4" />
 
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:id="@+id/button"
-        android:layout_marginBottom="27dp"
+        android:id="@+id/skip"
+        android:layout_marginBottom="41dp"
         android:background="#ffffff"
         android:text="Skip"
         android:layout_above="@+id/linearLayout4"
-        android:layout_alignStart="@+id/linearLayout4"
-        android:layout_marginStart="23dp" />
+        android:layout_alignStart="@+id/linearLayout4" />
 
 </RelativeLayout>

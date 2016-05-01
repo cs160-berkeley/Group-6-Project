@@ -3,7 +3,6 @@ package me.danieldobalian.balance;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.view.View;
@@ -17,13 +16,11 @@ public class NotificationHelper {
         Intent viewIntent = new Intent(caller, StartScreen.class);
         PendingIntent viewPendingIntent = PendingIntent.getActivity(caller, 0, viewIntent, 0);
 
-//        NotificationCompat.Builder notificationBuilder =
-//                new NotificationCompat.Builder(caller)
-//                        .setSmallIcon(R.mipmap.logobg)
-//                        .setLargeIcon(BitmapFactory.decodeResource(view.getResources(), R.mipmap.logobg))
-//                        .setContentTitle(title)
-//                        .setContentText(text);
-//        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(caller);
-//        notificationManager.notify(notificationId, notificationBuilder.build());
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(caller)
+                        .setContentTitle(title)
+                        .setContentText(text);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(caller);
+        notificationManager.notify(notificationId, notificationBuilder.build());
     }
 }

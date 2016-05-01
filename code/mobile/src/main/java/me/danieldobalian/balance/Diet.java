@@ -1,9 +1,13 @@
 package me.danieldobalian.balance;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.Arrays;
 
 public class Diet extends AppCompatActivity {
 
@@ -20,6 +24,10 @@ public class Diet extends AppCompatActivity {
     Button junk;
     Button fruit;
     Button soda;
+    Button next;
+    Button skip;
+    dataHelper helper;
+    boolean[] foods;
 
 
     @Override
@@ -39,7 +47,8 @@ public class Diet extends AppCompatActivity {
         fruit = (Button) findViewById(R.id.fruit);
         junk = (Button) findViewById(R.id.junk);
         soda = (Button) findViewById(R.id.soda);
-
+        next = (Button) findViewById(R.id.next);
+        skip = (Button) findViewById(R.id.skip);
         star1.setBackgroundResource(R.drawable.starunhighlight);
         star2.setBackgroundResource(R.drawable.starunhighlight);
         star3.setBackgroundResource(R.drawable.starunhighlight);
@@ -52,6 +61,36 @@ public class Diet extends AppCompatActivity {
         fruit.setBackgroundResource(R.drawable.unfruit);
         junk.setBackgroundResource(R.drawable.unjunk);
         soda.setBackgroundResource(R.drawable.unsoda);
+        helper = new dataHelper();
+        foods = new boolean[7];
+        Arrays.fill(foods, Boolean.FALSE);
+
+
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double y = helper.dietDataCrunch(foods, v,getBaseContext());
+                Log.v("DIET", "BOOLS - " + y);
+
+                Log.v("DIET", "BOOLS - " + Arrays.toString(foods));
+                for (boolean boole : foods ){
+                    Log.v("DIET", "Foods is  " + boole);
+
+
+                }
+
+
+            }
+        });
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), Dashboard.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -60,6 +99,7 @@ public class Diet extends AppCompatActivity {
             public void onClick(View v) {
 
                 veg.setSelected(!veg.isSelected());
+                foods[0] = veg.isSelected();
                 if (veg.isSelected()){
                     veg.setBackgroundResource(R.drawable.veg);
                 }
@@ -74,6 +114,7 @@ public class Diet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 alc.setSelected(!alc.isSelected());
+                foods[6] = alc.isSelected();
                 if (alc.isSelected()){
                     alc.setBackgroundResource(R.drawable.alcohol);
                 }
@@ -93,6 +134,7 @@ public class Diet extends AppCompatActivity {
 
 
                 meat.setSelected(!meat.isSelected());
+                foods[2] = meat.isSelected();
                 if (meat.isSelected()){
                     meat.setBackgroundResource(R.drawable.meat);
                 }
@@ -109,6 +151,7 @@ public class Diet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 caf.setSelected(!caf.isSelected());
+                foods[5] = caf.isSelected();
                 if (caf.isSelected()){
                     caf.setBackgroundResource(R.drawable.caf);
                 }
@@ -124,6 +167,7 @@ public class Diet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 fruit.setSelected(!fruit.isSelected());
+                foods[1] = fruit.isSelected();
                 if (fruit.isSelected()){
                     fruit.setBackgroundResource(R.drawable.fruit);
                 }
@@ -140,6 +184,7 @@ public class Diet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 junk.setSelected(!junk.isSelected());
+                foods[4] = junk.isSelected();
                 if (junk.isSelected()){
                     junk.setBackgroundResource(R.drawable.junk);
                 }
@@ -157,6 +202,7 @@ public class Diet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 soda.setSelected(!soda.isSelected());
+                foods[3] = soda.isSelected();
                 if (soda.isSelected()){
                     soda.setBackgroundResource(R.drawable.soda);
                 }

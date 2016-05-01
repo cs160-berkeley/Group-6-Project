@@ -2,60 +2,291 @@
 <items version="2" >
 
     <item
-        jar="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/exploded-aar/com.google.android.support/wearable/1.3.0/jars/classes.jar"
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="58b928ccbaf9090c632f278d6bd31e1ae42f2457">
-        <dex dex="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/pre-dexed/debug/com.google.android.support-wearable-1.3.0_417255f3cc4280ceb2ae17e1203705374ee686de.jar" />
+        sha1="3c729e6d76a36c5dc27e6a4c4009296f49eaa88a">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-drive-8.1.0_f5a59e45468fdc0beaf101d98f14464176ef3e6f.jar" />
     </item>
     <item
-        jar="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/jars/classes.jar"
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="c6d79137693d494dee16372d3921f919eb724ced">
-        <dex dex="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-22.0.0_c26c7a28ec4c8273c23a26e074558301e4def889.jar" />
+        sha1="dcb5b75baf05d92e61d5706737200ee55949f97b">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-8.1.0_1bb788740bb4ac4c8dbd5f73bed24933c34012ff.jar" />
     </item>
     <item
-        jar="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/jars/classes.jar"
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
-        <dex dex="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-8.1.0_915bfc6a9d64a46db15ce3e7ba7ac5bfec0dc381.jar" />
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.android.support-design-23.1.1_f31a801a7d79f1e5f7684c02fcbadfb1c05f9b72.jar" />
     </item>
     <item
-        jar="/Users/danieldobalian/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/pre-dexed/debug/support-annotations-22.2.0_a448ded2e9df52ae624800f006bd810646d879d4.jar" />
+        sha1="95758a2905669affbffc5ddd262921d375674fad">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-analytics-8.1.0_dee53404a17c2c486e495e9dd2907f2b487d0f57.jar" />
     </item>
     <item
-        jar="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/pre-dexed/debug/internal_impl-22.2.0_636449600865520cd5fe1a1b9336813dfa946115.jar" />
+        sha1="3b05c18f60969ecc2ba49c0409c4b96be2d9cb0c">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-safetynet-8.1.0_d56c80e54570f2e613dfa278230a058d0e1832ea.jar" />
     </item>
     <item
-        jar="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.1.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="97f3b099801a9ad9d70e835b9125273e986eb68d">
-        <dex dex="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-wearable-8.1.0_5d8143bbf74d9f37b836ad9ec6ec8ebadd6c4410.jar" />
-    </item>
-    <item
-        jar="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.1.0_319e388f9ab1bcd9271ce6f8f4bb679a1c2d7667.jar" />
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.1.0_63659d1823b726a4d3126e4fdc75284bb9d25469.jar" />
     </item>
     <item
-        jar="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jar="/Users/hamzahashmi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/danieldobalian/AndroidStudioProjects/Group-6-Project/code/wear/build/intermediates/pre-dexed/debug/com.android.support-support-v4-22.2.0_612dad3c1ff48792eda95c0ff645cea738d6102c.jar" />
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/support-annotations-23.1.1_e8225687ec197f090103ae2ccc1754dacb766b5f.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="325788a04b436a0bccbc5b4c54cf0f12ebdcbd2d">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-wallet-8.1.0_91f281ded03cca287be40df3809220cd27727310.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.1.0_190d4d6ce4e35750a92ef81759c8cfe893f629bc.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d93480da1d303122ee67dc3bc23e6297bdef9951">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-panorama-8.1.0_f1ca464db220a1a603d9e84206c141fe3c79bc08.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="041d93cf0533591c29d1d7263b2fa114dbfb20bd">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-nearby-8.1.0_47f91e0661f4721b936ce32f8aecfe35a00d69b4.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.1.1_5300d89cde01cb1c381e96b1cdc719df9e17a350.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.jjoe64/graphview/4.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="37bf8de5b4f9e7e93006db783b9b3168e32e38e9">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.jjoe64-graphview-4.0.1_323fbeb14ed044b6cd277e4e9e4e1cf207ecc857.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="997773777cf3904c11d6764fe3b7668538220e49">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-ads-8.1.0_b4505290a0544be9ac4b0eea3a6f68143239c421.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="993834cb17d07d51b92db89d2c330243592ebf77">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-games-8.1.0_87f0cccbc19518127592041a669ed7aeb4606348.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3178362320bcf51228835b60ff978efadfd1f783">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-cast-8.1.0_dbacb961c55bb2f3fc708eca1710808edde75a1d.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_e7af90d34b18c925ce600a756419c05ed52dfa5c.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-8.1.0_50b4275e114c627a07bf733b4a477ce5ad11b1e6.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.10.3/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2b81327f3afb5c0c84ee6f50df6f750737a44653">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.digits.sdk.android-digits-1.10.3_561ab17a909f261dc91fa3a2700483e3c0d7e588.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9cf8c0ef60847621c7ad00b4f78dbfc9daba4af2">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-fitness-8.1.0_cc1f6a9e7aca509174144aa1eb0508e5d4194537.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/.gradle/caches/modules-2/files-2.1/com.twitter/twitter-text/1.13.0/78415b95ae3184c5926d593feab64bfc0b73b2dd/twitter-text-1.13.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="78415b95ae3184c5926d593feab64bfc0b73b2dd">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/twitter-text-1.13.0_51e698e38fa9db3406c5755cf72e574e3220aba3.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/internal_impl-22.2.0_8cba838a31b9b1bdbf8f422c2714c85b3cdeb21d.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.10/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a5db9a2dd46d84285ef737f65030b74b6e8ee2a4">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/io.fabric.sdk.android-fabric-1.3.10_39095ef6f7b066289834961eec6037b4afbf421b.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/picasso-2.5.2_ce3d9e7d80bb9bb45a8161cec6164392509e9e28.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/gson-2.3_5b359d2800d904a7b6926f01ecf23c01868f5bb7.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d61920aba361832a9545a43fa8c9453eb02f18f7">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-plus-8.1.0_0608569770dffecfd8089692354174b5e6d7fc6b.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.8.0/a517f29ed06be2b2879524fcd94b6e9b36e2e0b5/retrofit-1.8.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a517f29ed06be2b2879524fcd94b6e9b36e2e0b5">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/retrofit-1.8.0_ad658b4a641daf3f1bd7857c9c579c2b856fa913.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3aed37c38c56679602255dd72ef356da5d327cda">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-location-8.1.0_b5f4c71f2c6f7ed1b1ed3042f4e0ec1f5d3cde15.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d294caf562c4c678b2ef351662a0ca6f1a4d06c0">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-identity-8.1.0_767c4b67b41dd2990eae9cf30499998e4bd05c8a.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.1.1_60c0f1b52d1f90b6a0349f02c29501427ed3984d.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0ea42614d0d3d5e9f507cb2f432ae821307cd0dc">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.twitter.sdk.android-tweet-composer-1.0.3_f5e56595d514ad852f44bf9bf8fa3d368681cf20.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.10.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2d903060c54d0109fc4efa404a62fac2158d6633">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.twitter.sdk.android-tweet-ui-1.10.1_1052f5dad7e7d9226abc7c419de861f95666dc6f.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="b92002cb2f0e11a226ac5bac6dff1dc2a9d0b774">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appinvite-8.1.0_23cbe2792ab2299ac2c37ab7b30f1b9fae6655c8.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="482de223655d06253cc6a4955d653f8994169500">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-measurement-8.1.0_50b33d8c70b2f4859d1e9e79a0fde006b4addfa6.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="17449c47df35c754b257532052f1270c444f7993">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-vision-8.1.0_9e0bd4ec02215486a67a7d94e8cb812bfd00f94c.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.android.support-mediarouter-v7-22.2.0_66e29b589a329cb471f562a72d1a3815bc9b0f99.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-8.1.0_1c62068c8d25962e19f67cc1a8f3fccef226961d.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter/1.13.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e25d39642cf82ff86e13390e7854ef135df232ea">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.twitter.sdk.android-twitter-1.13.1_7452c4c883edd2165e64980edaefcd2284431ba2.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="97f3b099801a9ad9d70e835b9125273e986eb68d">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-wearable-8.1.0_0ba472db8efd0ba9cb355d27ebd3d3edca858e00.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_e093103433f6b886c71406b0402fb45bbd9ee898.jar" />
+    </item>
+    <item
+        jar="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.6/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1360908bc3e1751f5e2248e64aedbe4b5944b702">
+        <dex dex="/Users/hamzahashmi/sp16/160/balance/Group-6-Project/code/mobile/build/intermediates/pre-dexed/debug/com.twitter.sdk.android-twitter-core-1.6.6_1cbee46aa3f033455e8fbcbf2a876050a8d5d0d6.jar" />
     </item>
 
 </items>

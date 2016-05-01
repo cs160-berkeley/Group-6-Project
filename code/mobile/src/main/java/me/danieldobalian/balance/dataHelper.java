@@ -21,7 +21,7 @@ public class dataHelper {
     //Input options are represented as a binary, so this should be simple
     //if they've been drinking, check if it's a problem and if so shoot off a warning.
     //if they've been eating healthy, check if they're on a streak and if so send encouragement.
-    protected double dietDataCrunch(boolean inputs[], View view, Context context) {
+    public static double dietDataCrunch(boolean inputs[], boolean notify, View view, Context context) {
         /* let inputs be as follows:
         0 = veggies
         1 = fruits
@@ -35,27 +35,32 @@ public class dataHelper {
         double stars;
         stars = 0;
         for (int i=0;i<7;i++) {
-            if (i<4) {stars+=2;} //+2 stars for healthy choices
-            else {stars--;} //-1 stars for unhealthy choices
+            if(inputs[i]) {
+                if (i<3) {stars+=2;} //+2 stars for healthy choices
+                else {stars--;} //-1 stars for unhealthy choices
+            }
         }
         //stars bounded from 0-5
         stars = Math.max((double) 0, stars);
         stars = Math.min((double) 5,stars);
 
-        //check for alcohol abuse
-        boolean alcohol = inputs[6];
-        if(alcohol) {checkAlcoholAbuse(view, context);}
-
-        //check for health rewards
-        if(stars==(double)5) {checkHealthReward(view, context);}
-//WRITE
-//      read_write_helper.writeData(Double.toString(stars),2,context);
-        return stars*20;
+        if(notify) {
+            //check for alcohol abuse
+            boolean alcohol = inputs[6];
+            if (alcohol) {
+                checkAlcoholAbuse(view, context);
+            }
+            //check for health rewards
+            if (stars == (double) 5) {
+                checkHealthReward(view, context);
+            }
+        }
+        return stars * 20;
     };
 
     //assuming they drank alcohol today, check if they've gotten drunk the last 3 days as well.
     //if so, fire off a warning notification.
-    protected void checkAlcoholAbuse(View view, Context context) {
+    public static void checkAlcoholAbuse(View view, Context context) {
 //READ
 //      boolean past3DaysAlcohol = read_write_helper.readData(2,3,1,context);
         boolean past3DaysAlcohol = ALCOHOL_FLAG; //should be read from history
@@ -71,7 +76,7 @@ public class dataHelper {
 
     //assuming they ate healthy today, check if they're on a healthy eating streak.
     //if so, fire off an encouraging notification.
-    protected void checkHealthReward(View view, Context context) {
+    public static void checkHealthReward(View view, Context context) {
 // READ
 //      int healthyStreak = read_write_helper.readData(2,30,1,context);
         int healthyStreak = DIET_STREAK; //Number of previous days in a row they got 5 stars
@@ -100,7 +105,7 @@ public class dataHelper {
     If they got >30 minutes, see if they're on a streak and encourage them.
     Return a score based on 30 minutes = score of 50.
     */
-    protected double lightDataCrunch(int[] light, View view, Context context) {
+    public static double lightDataCrunch(int[] light, boolean notify, View view, Context context) {
         int timeIncrement = LIGHT_INCREMENT; //how frequently the sensor checks
         int lightThreshhold = SUNLIGHT_THRESHHOLD; //they were outside at this time
         int sunlight = 0;
@@ -109,20 +114,22 @@ public class dataHelper {
                 sunlight+=timeIncrement;
             }
         }
+        if(notify) {
 //WRITE
-//      read_write_helper.writeData(Double.toString(Integer.toString(sunlight),5,context);
-        if (sunlight==0) {
-            checkHomebound(view, context);
-        }
-        if (sunlight>=30) {
-            checkExerciseReward(view, context);
+//          read_write_helper.writeData(Double.toString(Integer.toString(sunlight),5,context);
+            if (sunlight==0) {
+                checkHomebound(view, context);
+            }
+            if (sunlight>=30) {
+                checkExerciseReward(view, context);
+            }
         }
         return (double) Math.min((double)100,50*sunlight/30);
     }
 
     //Assuming they didn't leave the house today, check if it's a pattern
     //If so, fire off a warning
-    protected void checkHomebound(View view, Context context) {
+    public static void checkHomebound(View view, Context context) {
 // READ
 //      boolean past2DaysHomebound = read_write_helper.readData(5,2,1,context);
         boolean past2DaysHomebound = HOMEBOUND_FLAG; //this should be read from history
@@ -139,7 +146,7 @@ public class dataHelper {
 
     //assuming they were outside for at least 30 minutes today, check if they're on a streak
     //if they are, fire off some encouragement
-    protected void checkExerciseReward(View view, Context context) {
+    public static void checkExerciseReward(View view, Context context) {
 // READ
 //      int exerciseStreak = read_write_helper.readData(5,30,1,context);
         int exerciseStreak = EXERCISE_STREAK; //this should be read from history
@@ -166,7 +173,7 @@ public class dataHelper {
     //if today's number of tweets is less than the average number of tweets over the period,
     //check if that's a pattern, and fire off a warning if so.
     //Then return todays number of tweets compared to the average, where avg = 50.
-    protected double twitterDataCrunch(int[] tweetsPerDay, View view, Context context) {
+    public static double twitterDataCrunch(int[] tweetsPerDay, boolean notify, View view, Context context) {
         //let tweetsPerDay be tweets on each day over the past X days (ideally between 7 and 30)
         double tweets = 0;
         int days = tweetsPerDay.length;
@@ -175,17 +182,19 @@ public class dataHelper {
         }
         double avgTweetsPerDay = tweets/days;
         int todaysTweets = tweetsPerDay[days-1];
+        if(notify) {
 //WRITE
-//      read_write_helper.writeData(Integer.toString(todaysTweets),3,context);
-        if (todaysTweets<avgTweetsPerDay) {
-            checkQuietFeed(view, context);
+//          read_write_helper.writeData(Integer.toString(todaysTweets),3,context);
+            if (todaysTweets < avgTweetsPerDay) {
+                checkQuietFeed(view, context);
+            }
         }
         return Math.min(100,50*todaysTweets/avgTweetsPerDay);
     }
 
     //check to see if the user's twitter feed has been abnormally quiet lately
     // and fire off a warning if so.
-    protected void checkQuietFeed(View view, Context context) {
+    public static void checkQuietFeed(View view, Context context) {
 // READ
 //      int exerciseStreak = read_write_helper.readData(3,30,1,context);
         boolean unusuallyQuiet = TWITTER_FLAG; //this should be read from history
@@ -203,16 +212,18 @@ public class dataHelper {
     //compiles an overall mood score based on slider inputs (assumed to be between 1 and 100)
     //and then checks their history to see if it should fire off a notification.
     //Finally, return the mood score.
-    protected double moodDataCrunch(double happy, double stress, double bored, View view, Context context) {
+    public static double moodDataCrunch(double happy, double stress, double bored, boolean notify, View view, Context context) {
         double mood_score = 0.5 * happy + 0.3 * stress + 0.2 * bored;
+        if(notify) {
 //WRITE
-//      read_write_helper.writeData(Double.toString(mood_score),1,context);
-        checkMoodFluctuation(mood_score, view, context);
+//          read_write_helper.writeData(Double.toString(mood_score),1,context);
+            checkMoodFluctuation(mood_score, view, context);
+        }
         return mood_score;
     }
 
     //check if on a particularly large upswing or downswing - if so, send notification.
-    public void checkMoodFluctuation(double mood, View view, Context context) {
+    public static void checkMoodFluctuation(double mood, View view, Context context) {
 //READ
 //      boolean moodIncreasting = read
 //      boolean moodDecreasing = read
@@ -237,7 +248,7 @@ public class dataHelper {
 
     //check if heart rate is within normal bounds; if not, note it, and possibly send a notification.
     //Then return the percentage of abnormal readings over the course of the day.
-    protected  double heartRateCruncher(double[] heart_rate, View view, Context context) {
+    public static double heartRateCruncher(double[] heart_rate, boolean notify, View view, Context context) {
         int abnormal = 0;
         double heart_score;
         for (int i = 0; i < heart_rate.length; i++){
@@ -246,13 +257,15 @@ public class dataHelper {
             }
         }
         heart_score = (1-(abnormal/heart_rate.length))*100;
+        if(notify) {
 // WRITE
-//      read_write_helper.writeData(Double.toString(heart_score),4,context);
-        checkHeartRate(heart_score, view, context);
+//          read_write_helper.writeData(Double.toString(heart_score),4,context);
+            checkHeartRate(heart_score, view, context);
+        }
         return heart_score;
     }
 
-    protected void checkHeartRate (double heart_score, View view, Context context) {
+    public static void checkHeartRate (double heart_score, View view, Context context) {
 // READ
 //      int exerciseStreak = read_write_helper.readData(4,30,1,context);
         boolean chronicHighHeartRate = HEARTRATE_FLAG;
@@ -267,19 +280,33 @@ public class dataHelper {
     }
 
     //checks to see if the given heart rate is within normal bounds or not
-    public boolean abnormal_heart_rate(double avg_heart_beat){
+    public static boolean abnormal_heart_rate(double avg_heart_beat){
         double x = avg_heart_beat;
         // normal heart rate
         return (x < 60 || x > 100);
     }
 
     //computes an overall mood score from the component input scores.
-    public double final_score(double mood_score, double heart_score, double twitter_score, double diet_score, double light_score){
+    public static double final_score(double mood_score, double heart_score, double twitter_score, double diet_score, double light_score){
         double the_score;
         the_score = 0.4*mood_score + 0.2*diet_score + 0.2*heart_score + 0.1*twitter_score + 0.1*light_score;
 // WRITE
 //      read_write_helper.writeData(Double.toString(the_score),?,context);
         return the_score;
+    }
+
+    public static double[] get_last_n_final_scores(int n) {
+        double[] mood_score = new double[n];
+        double[] heart_score = new double[n];
+        double[] twitter_score = new double[n];
+        double[] diet_score = new double[n];
+        double[] light_score = new double[n];
+        return new double[] {1,2,3,4};
+    }
+
+    public static void main() {
+        double j = moodDataCrunch((double)50,(double)50,(double)50,false,null,null);
+        System.out.print(Double.toString(j));
     }
 
 

@@ -19,7 +19,7 @@ import java.util.Calendar;
  */
 public class read_write_helper {
 
-    public void writeDataDiet(boolean inputs[], Context context) {
+    public static void writeDataDiet(boolean inputs[], Context context) {
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = df.format(c.getTime());
@@ -44,7 +44,7 @@ public class read_write_helper {
 
     }
 
-    public void writeDataLight(int[] light, Context context) {
+    public static void writeDataLight(int[] light, Context context) {
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = df.format(c.getTime());
@@ -69,7 +69,7 @@ public class read_write_helper {
 
     }
 
-    public void writeDataTweet(int[] tweetsPerDay, Context context) {
+    public static void writeDataTweet(int[] tweetsPerDay, Context context) {
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = df.format(c.getTime());
@@ -94,12 +94,12 @@ public class read_write_helper {
 
     }
 
-    public void writeDataMood(double happy, double stress, double bored, Context context) {
+    public static void writeDataMood(double happy, double stress, double bored, Context context) {
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = df.format(c.getTime());
         String file_name = "mood.txt";
-        String Edit = formattedDate + "|" + Double.toString(happy) + "," + Double.toString(stress)+ "," + Double.toString(bored) + ";" + '\n';
+        String Edit = formattedDate + "|" + Double.toString(happy) + "," + Double.toString(stress) + "," + Double.toString(bored) + ";" + '\n';
         try {
             FileOutputStream fileOutputStream = context.openFileOutput(file_name, context.MODE_APPEND);
             fileOutputStream.write(Edit.getBytes());
@@ -114,7 +114,7 @@ public class read_write_helper {
 
     }
 
-    public void writeDataHearth(double[] heart_rate, Context context) {
+    public static void writeDataHearth(double[] heart_rate, Context context) {
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = df.format(c.getTime());
@@ -139,7 +139,7 @@ public class read_write_helper {
 
     }
 
-    public String[] readData(int typeData, int last_n, int return_type, Context context) {
+    public static String[] readData(int typeData, int last_n, int return_type, Context context) {
         int dataType = typeData;
         int n = last_n;
         int type = return_type;
@@ -163,30 +163,75 @@ public class read_write_helper {
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             StringBuffer stringBuffer = new StringBuffer();
-            while ((line=bufferedReader.readLine())!=null)
-            {
+            while ((line = bufferedReader.readLine()) != null) {
                 stringBuffer.append(line);
             }
             String string = stringBuffer.toString();
-            Log.v(string,"string output");
+            Log.v(string, "string output");
             String[] each_input = string.split(";");
-            Log.v(each_input[0],"test each input");
-            Log.v(each_input[1],"test each input");
-            Log.v(each_input[2],"test each input");
+            Log.v(each_input[0], "test each input");
+            Log.v(each_input[1], "test each input");
+            Log.v(each_input[2], "test each input");
             for (int i = 0; i < n; i++) {
                 String[] time_value = each_input[each_input.length - i - 1].split("\\|");
                 String timestamp = time_value[0];
                 String value = time_value[1];
-                if(type==1){output[i] = value;}
-                else if(type==2){output[i] = timestamp;}
+                if (type == 1) {
+                    output[i] = value;
+                } else if (type == 2) {
+                    output[i] = timestamp;
+                }
             }
-            return output;
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return output;
+    }
+
+    public static boolean[] parseFood(String Input) {
+        String[] after_split = Input.split(",");
+        boolean[] output = new boolean[after_split.length];
+        for (int i = 0; i < after_split.length; i++) {
+            output[i] = Boolean.parseBoolean(after_split[i]);
+        }
+        return output;
+    }
+
+    public static int[] parseLight(String Input) {
+        String[] after_split = Input.split(",");
+        int[] output = new int[after_split.length];
+        for (int i = 0; i < after_split.length; i++) {
+            output[i] = Integer.parseInt(after_split[i]);
+        }
+        return output;
+    }
+
+    public static int[] parseTwitter(String Input) {
+        String[] after_split = Input.split(",");
+        int[] output = new int[after_split.length];
+        for (int i = 0; i < after_split.length; i++) {
+            output[i] = Integer.parseInt(after_split[i]);
+        }
+        return output;
+    }
+
+    public static double[] parseMood(String Input) {
+        String[] after_split = Input.split(",");
+        double[] output = new double[after_split.length];
+        for (int i = 0; i < after_split.length; i++) {
+            output[i] = Double.parseDouble(after_split[i]);
+        }
+        return output;
+    }
+
+    public static double[] parseHeart(String Input) {
+        String[] after_split = Input.split(",");
+        double[] output = new double[after_split.length];
+        for (int i = 0; i < after_split.length; i++) {
+            output[i] = Double.parseDouble(after_split[i]);
+        }
+        return output;
     }
 }

@@ -48,9 +48,12 @@ public class test extends AppCompatActivity {
             public void onClick(View v) {
                 read_write_helper rwh = new read_write_helper();
                 String[] a = rwh.readData(3,3,1,test.this);
-                textView.setText(a[0]);
-                textView2.setText(a[1]);
-                textView3.setText(a[2]);
+                int[] test = rwh.parseTwitter(a[2]);
+                String test1 = Integer.toString(test[0]);
+                String test2 = Integer.toString(test[1]);
+                textView.setText(a[2]);
+                textView2.setText(test1);
+                textView3.setText(test2);
             }
         });
 

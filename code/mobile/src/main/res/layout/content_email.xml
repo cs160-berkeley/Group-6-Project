@@ -16,7 +16,7 @@
     <ImageView
         android:layout_width="129.75dp"
         android:layout_height="88.5dp"
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:src="@drawable/balancelogo"
         android:background="#EB5757"
         android:layout_alignParentTop="true"
@@ -31,7 +31,7 @@
         android:typeface="normal"
         android:textColor="#000000"
         android:textSize="16dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
@@ -40,17 +40,16 @@
     <EditText
         android:layout_width="500px"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:ems="10"
-        android:id="@+id/drEnter"
+        android:id="@+id/addr"
         android:hint="Email"
         android:textSize="16dp"
         android:clickable="true"
         android:windowSoftInputMode="stateVisible"
         android:backgroundTint="#303030"
         android:textColorHint="#888c91"
-        android:textColor="#FFFFFF"
-        android:maxLength="5"
+        android:textColor="#000000"
         android:maxLines="1"
         android:paddingBottom="50px"
         android:gravity="center"
@@ -61,11 +60,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send"
-        android:id="@+id/drInput"
+        android:id="@+id/pdf"
         android:background="#EB5757"
         android:textColor="#FFFFFF"
         android:paddingLeft="300px"
         android:paddingRight="300px"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/graph2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="67dp"
+        android:src="@drawable/graph" />
+
 </RelativeLayout>

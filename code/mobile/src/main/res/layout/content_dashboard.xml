@@ -41,7 +41,7 @@
                 <com.jjoe64.graphview.GraphView
                     android:layout_width="275dp"
                     android:layout_height="150dp"
-                    android:id="@+id/graph"
+                    android:id="@+id/logo"
                     android:layout_gravity="right|center_vertical" />
             </FrameLayout>
         </FrameLayout>

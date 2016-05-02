@@ -88,6 +88,7 @@ public class Diet extends AppCompatActivity {
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+                NotificationHelper.sendTextNotification(8,"Hi","This is a test",v,context);
                 Intent intent = new Intent(getBaseContext(), Dashboard.class);
                 startActivity(intent);
 

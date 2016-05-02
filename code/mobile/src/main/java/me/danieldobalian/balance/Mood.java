@@ -1,11 +1,14 @@
 package me.danieldobalian.balance;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 public class Mood extends AppCompatActivity {
 
@@ -15,6 +18,7 @@ public class Mood extends AppCompatActivity {
     SeekBar happy;
     SeekBar fun;
     dataHelper helper;
+    Button skip;
 
 
 
@@ -23,6 +27,7 @@ public class Mood extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood);
         next = (Button) findViewById(R.id.next);
+        skip = (Button) findViewById(R.id.skip);
         stressed = (SeekBar) findViewById(R.id.stressedslide);
         happy = (SeekBar) findViewById(R.id.happyslide);
         fun = (SeekBar) findViewById(R.id.boredomslide);
@@ -38,11 +43,24 @@ public class Mood extends AppCompatActivity {
                 double y = helper.moodDataCrunch(happy.getProgress(), stressed.getProgress(), fun.getProgress(), v, getBaseContext());
                 Log.v("bleh", "y value is " + y);
 
+                Context context = getApplicationContext();
+                CharSequence text = "We recorded your mood!";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+                Intent intent = new Intent(getBaseContext(), Dashboard.class);
+                startActivity(intent);
 
 
+            }
+        });
 
 
-
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), Dashboard.class);
+                startActivity(intent);
             }
         });
 

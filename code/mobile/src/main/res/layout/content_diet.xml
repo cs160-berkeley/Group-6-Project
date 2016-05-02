@@ -120,7 +120,7 @@
         android:layout_height="50dp"
         android:id="@+id/next"
         android:background="#EB5757"
-        android:text="Next"
+        android:text="Done"
         android:layout_alignTop="@+id/skip"
         android:layout_alignEnd="@+id/linearLayout2" />
 
@@ -129,7 +129,7 @@
         android:layout_height="50dp"
         android:id="@+id/skip"
         android:background="#ffffff"
-        android:text="Skip"
+        android:text="Cancel"
         android:layout_below="@+id/linearLayout7"
         android:layout_alignStart="@+id/linearLayout7"
         android:layout_marginTop="37dp" />

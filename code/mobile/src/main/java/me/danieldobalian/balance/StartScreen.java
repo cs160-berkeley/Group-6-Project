@@ -16,6 +16,7 @@ public class StartScreen extends AppCompatActivity {
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "O0EzIGBuDnoECUTBnR7FGWqBu";
     private static final String TWITTER_SECRET = "pxp1JLzvvmtn3SQPAnELXokNFJjmfts0lvg4zOVTGoYanihKah";
+    Button cont;
 
 
     Button tempButton;
@@ -39,6 +40,16 @@ public class StartScreen extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+
+        cont = (Button) findViewById(R.id.cont);
+        cont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

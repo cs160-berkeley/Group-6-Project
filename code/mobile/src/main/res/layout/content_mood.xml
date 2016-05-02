@@ -32,12 +32,27 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="34dp">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/boredom"
-            android:src="@drawable/boredom"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/boredom"
+                android:src="@drawable/boredom"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bored"
+                android:id="@+id/textView11"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
         <SeekBar
             android:layout_width="100dp"
@@ -49,12 +64,28 @@
             android:progressDrawable="@drawable/prog2"
             android:max="5" />
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/fun"
-            android:src="@drawable/fun"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/fun"
+                android:src="@drawable/fun"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Fun"
+                android:id="@+id/textView12"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -66,12 +97,27 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="30dp">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/stressed"
-            android:src="@drawable/sad"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/stressed"
+                android:src="@drawable/sad"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Stressed"
+                android:id="@+id/textView13"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
         <SeekBar
             android:layout_width="100dp"
@@ -83,12 +129,28 @@
             android:progressDrawable="@drawable/prog2"
             android:max="5" />
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/relaxed"
-            android:src="@drawable/relaxed"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="top">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/relaxed"
+                android:src="@drawable/relaxed"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Relaxed"
+                android:id="@+id/textView14"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -97,18 +159,33 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout5"
+        android:layout_marginTop="41dp"
         android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="38dp">
+        android:layout_alignParentStart="true">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/sad"
-            android:src="@drawable/sad"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/sad"
+                android:src="@drawable/sad"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Sad"
+                android:id="@+id/textView10"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
         <SeekBar
             android:layout_width="100dp"
@@ -121,47 +198,60 @@
             android:max="5"
             android:indeterminate="false" />
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/happy"
-            android:src="@drawable/happy"
-            android:layout_alignTop="@+id/sad"
-            android:layout_alignParentEnd="true"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/happy"
+                android:src="@drawable/happy"
+                android:layout_alignTop="@+id/sad"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Happy"
+                android:id="@+id/textView9"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="fill_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="58dp"
-        android:id="@+id/linearLayout4"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignEnd="@+id/textView"
-        android:paddingRight="50dp">
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:id="@+id/skip"
+            android:background="#ffffff"
+            android:text="Cancel"
+            android:layout_above="@+id/linearLayout4"
+            android:layout_alignStart="@+id/linearLayout4"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:id="@+id/next"
+            android:background="#EB5757"
+            android:text="Done"
+            android:layout_alignTop="@+id/skip"
+            android:layout_alignEnd="@+id/linearLayout4"
+            android:layout_weight="1" />
 
     </LinearLayout>
-
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:id="@+id/next"
-        android:background="#EB5757"
-        android:text="Next"
-        android:layout_alignTop="@+id/skip"
-        android:layout_alignEnd="@+id/linearLayout4" />
-
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:id="@+id/skip"
-        android:layout_marginBottom="41dp"
-        android:background="#ffffff"
-        android:text="Skip"
-        android:layout_above="@+id/linearLayout4"
-        android:layout_alignStart="@+id/linearLayout4" />
 
 </RelativeLayout>

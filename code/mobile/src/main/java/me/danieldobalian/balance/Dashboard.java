@@ -88,6 +88,7 @@ public class Dashboard extends AppCompatActivity {
         staticLabelsFormatter.setHorizontalLabels(new String[]{"0", "1", "2", "3", "4"});
         staticLabelsFormatter.setVerticalLabels(new String[]{"Neg", "Avg", "Pos"});
         graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
+        graph.setBackgroundColor(1000);
         helper = new dataHelper();
 
 

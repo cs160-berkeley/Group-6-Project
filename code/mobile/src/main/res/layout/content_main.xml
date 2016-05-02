@@ -15,16 +15,58 @@
 
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout">
 
-        <Button
-            android:layout_width="278dp"
-            android:layout_height="284dp"
-            android:id="@+id/tempButton"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/logo"
-            android:layout_gravity="center" />
     </FrameLayout>
+
+    <Button
+        android:layout_width="278dp"
+        android:layout_height="284dp"
+        android:id="@+id/tempButton"
+        android:background="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/cont"
+        android:background="@drawable/continue2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="25dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:layout_above="@+id/tempButton"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Balance"
+            android:id="@+id/textView7"
+            android:layout_above="@+id/tempButton"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:layout_gravity="center"
+            android:textSize="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Quantifying Mood"
+            android:id="@+id/textView8"
+            android:layout_gravity="center"
+            android:textColor="#ffffff" />
+    </LinearLayout>
 
 </RelativeLayout>

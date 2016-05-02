@@ -226,31 +226,31 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="250dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="31dp">
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="150dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
             android:id="@+id/skip"
             android:background="#ffffff"
             android:text="Cancel"
             android:layout_above="@+id/linearLayout4"
-            android:layout_alignStart="@+id/linearLayout4"
-            android:layout_weight="1" />
+            android:layout_alignStart="@+id/linearLayout4"/>
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="150dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
             android:id="@+id/next"
             android:background="#EB5757"
             android:text="Done"
             android:layout_alignTop="@+id/skip"
-            android:layout_alignEnd="@+id/linearLayout4"
-            android:layout_weight="1" />
+            android:layout_alignEnd="@+id/linearLayout4"/>
 
     </LinearLayout>
 

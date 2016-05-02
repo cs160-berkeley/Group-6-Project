@@ -6,22 +6,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="me.danieldobalian.balance.StartScreen"
-    tools:deviceIds="wear">
+    tools:deviceIds="wear" android:background="#ea5857">
 
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="43dp"
+        android:background="@drawable/logo"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="80dp"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MoodInput"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:background="@drawable/inputmoodimg"
         android:id="@+id/mood"
-        android:layout_above="@+id/diet"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DietInput"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:background="@drawable/inputdietimg"
         android:id="@+id/diet"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="7dp"
+        android:layout_below="@+id/mood"
         android:layout_alignStart="@+id/mood" />
 </RelativeLayout>

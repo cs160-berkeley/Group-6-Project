@@ -18,7 +18,7 @@ import java.util.Locale;
 import android.content.Context;
 import android.widget.Toast;
 
-public class MainActivity extends WearableActivity {
+public class MainActivity extends WearableActivity  implements SensorEventListener{
 
     private static final SimpleDateFormat AMBIENT_DATE_FORMAT =
             new SimpleDateFormat("HH:mm", Locale.US);
@@ -126,10 +126,8 @@ public class MainActivity extends WearableActivity {
         Sensor mHeartRateSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE);
         Sensor mLightSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
-        mSensorManager.registerListener((SensorEventListener) this,
-                mHeartRateSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener((SensorEventListener) this,
-                mLightSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, mHeartRateSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, mLightSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     public void onAccuracyChanged(Sensor sensor, int accuracy) {

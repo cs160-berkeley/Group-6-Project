@@ -18,8 +18,8 @@
         android:id="@+id/frameLayout2">
 
         <RatingBar
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:id="@+id/myRatingBar"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
@@ -49,4 +49,15 @@
         android:layout_below="@+id/frameLayout2"
         android:layout_alignEnd="@+id/frameLayout2"
         android:textSize="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Diet"
+        android:id="@+id/textView12"
+        android:layout_above="@+id/frameLayout2"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:layout_marginBottom="25dp" />
 </RelativeLayout>

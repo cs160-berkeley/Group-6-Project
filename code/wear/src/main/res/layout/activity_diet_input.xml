@@ -103,6 +103,6 @@
         android:id="@+id/input"
         android:layout_alignBottom="@+id/myRatingBar"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/check" />
+        android:background="@drawable/rdchk" />
 
 </RelativeLayout>

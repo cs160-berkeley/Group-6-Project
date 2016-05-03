@@ -15,68 +15,78 @@
         android:layout_marginLeft="80dp"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="19dp"
         android:text="Balance"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2"
-        android:layout_marginEnd="30dp"
         android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/textView">
+        android:layout_centerHorizontal="true">
 
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/diet"
-            android:id="@+id/diet"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
             android:layout_centerVertical="true"
-            android:layout_alignStart="@+id/textView2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Input Diet"
-            android:id="@+id/textView2"
-            android:textColor="#000000"
-            android:textSize="8dp"
-            android:layout_below="@+id/diet"
             android:layout_alignEnd="@+id/textView"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+            android:layout_weight="1">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout3"
-        android:layout_alignTop="@+id/linearLayout2"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginStart="37dp">
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/diet"
+                android:id="@+id/diet"
+                android:layout_centerVertical="true"
+                android:layout_alignStart="@+id/textView2"
+                android:layout_gravity="center" />
 
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/happy"
-            android:id="@+id/mood"
-            android:layout_alignTop="@+id/diet"
-            android:layout_toEndOf="@+id/diet"
-            android:layout_gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Input Diet"
+                android:id="@+id/textView2"
+                android:textColor="#000000"
+                android:textSize="8dp"
+                android:layout_below="@+id/diet"
+                android:layout_alignEnd="@+id/textView"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="input mood"
-            android:id="@+id/textView3"
-            android:textColor="#000000"
-            android:textSize="8dp"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/linearLayout3"
+            android:layout_alignTop="@+id/linearLayout2"
+            android:layout_alignStart="@+id/textView"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/happy"
+                android:id="@+id/mood"
+                android:layout_alignTop="@+id/diet"
+                android:layout_toEndOf="@+id/diet"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="input mood"
+                android:id="@+id/textView3"
+                android:textColor="#000000"
+                android:textSize="8dp"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

@@ -1,6 +1,10 @@
 package me.danieldobalian.balance;
 
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.BoxInsetLayout;
@@ -8,15 +12,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import android.content.Context;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class MainActivity extends WearableActivity  implements SensorEventListener{
 
@@ -98,17 +97,17 @@ public class MainActivity extends WearableActivity  implements SensorEventListen
     }
 
     private void updateDisplay() {
-        if (isAmbient()) {
-            mContainerView.setBackgroundColor(getResources().getColor(android.R.color.black));
-            mTextView.setTextColor(getResources().getColor(android.R.color.white));
-            mClockView.setVisibility(View.VISIBLE);
-
-            mClockView.setText(AMBIENT_DATE_FORMAT.format(new Date()));
-        } else {
-            mContainerView.setBackground(null);
-            mTextView.setTextColor(getResources().getColor(android.R.color.black));
-            mClockView.setVisibility(View.GONE);
-        }
+//        if (isAmbient()) {
+//            mContainerView.setBackgroundColor(getResources().getColor(android.R.color.black));
+//            mTextView.setTextColor(getResources().getColor(android.R.color.white));
+//            mClockView.setVisibility(View.VISIBLE);
+//
+//            mClockView.setText(AMBIENT_DATE_FORMAT.format(new Date()));
+//        } else {
+//            //mContainerView.setBackground(null);
+//            mTextView.setTextColor(getResources().getColor(android.R.color.black));
+//            mClockView.setVisibility(View.GONE);
+//        }
     }
 
     /* Sensor code */

@@ -8,23 +8,30 @@
     app:rectLayout="@layout/rect_activity_data_inputted"
     app:roundLayout="@layout/round_activity_data_inputted"
     tools:context="me.danieldobalian.balance.DataInputtedActivity"
-    tools:deviceIds="wear">
+    tools:deviceIds="wear"
+    android:background="#FFFFFF">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="We got your data!"
+        android:text="Inputted"
         android:id="@+id/textView9"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#ea5857"
+        android:background="@drawable/check"
+        android:textAlignment="center"
+        android:gravity="center" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/home"
-        android:layout_below="@+id/textView9"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/logo"
+        android:background="@drawable/home" />
 </RelativeLayout>

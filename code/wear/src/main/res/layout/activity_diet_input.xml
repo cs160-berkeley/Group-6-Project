@@ -8,56 +8,101 @@
     app:rectLayout="@layout/rect_activity_diet_input"
     app:roundLayout="@layout/round_activity_diet_input"
     tools:context="me.danieldobalian.balance.DietInputActivity"
-    tools:deviceIds="wear">
+    tools:deviceIds="wear"
+    android:background="#FFFFFF">
 
-    <FrameLayout
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/myRatingBar"
+        android:layout_gravity="center"
+        android:numStars="5"
+        android:stepSize="1"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/frameLayout2">
+        android:id="@+id/linearLayout">
 
-        <RatingBar
-            android:layout_width="wrap_content"
+        <Button
+            android:layout_width="30dp"
             android:layout_height="30dp"
-            android:id="@+id/myRatingBar"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:numStars="5"
-            android:stepSize="1"
-            style="?android:attr/ratingBarStyleSmall"
-            />
-    </FrameLayout>
+            android:id="@+id/star1"
+            android:background="@drawable/starunhighlight"
+            android:layout_above="@+id/frameLayout2"
+            android:layout_alignEnd="@+id/textView11" />
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/star2"
+            android:background="@drawable/starunhighlight" />
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/star3"
+            android:background="@drawable/starunhighlight" />
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/star4"
+            android:background="@drawable/starunhighlight" />
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/star5"
+            android:background="@drawable/starunhighlight" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Diet"
+        android:id="@+id/textView10"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="unhealthy"
-        android:id="@+id/textView10"
-        android:layout_below="@+id/frameLayout2"
-        android:layout_alignStart="@+id/frameLayout2"
-        android:textSize="8dp" />
+        android:text="Unhealthy"
+        android:id="@+id/textView7"
+        android:textColor="#000000"
+        android:layout_below="@+id/linearLayout"
+        android:layout_toStartOf="@+id/myRatingBar"
+        android:textSize="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="healthy"
-        android:id="@+id/textView11"
-        android:layout_below="@+id/frameLayout2"
-        android:layout_alignEnd="@+id/frameLayout2"
-        android:textSize="8dp" />
+        android:id="@+id/textView8"
+        android:textColor="#000000"
+        android:textSize="10dp"
+        android:layout_alignTop="@+id/textView7"
+        android:layout_alignEnd="@+id/linearLayout" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Diet"
-        android:id="@+id/textView12"
-        android:layout_above="@+id/frameLayout2"
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/input"
+        android:layout_alignBottom="@+id/myRatingBar"
         android:layout_centerHorizontal="true"
-        android:textSize="20dp"
-        android:layout_marginBottom="25dp" />
+        android:background="@drawable/check" />
+
 </RelativeLayout>

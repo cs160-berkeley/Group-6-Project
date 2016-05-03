@@ -30,8 +30,8 @@ public class PhoneListenerService extends WearableListenerService {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             //you need to add this flag since you're starting a new activity from a service
 
-            Toast.makeText(getApplicationContext(), "Got Mood Data Update: " + value,
-                    Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(), "Got Mood Data Update: " + value,
+//                    Toast.LENGTH_LONG).show();
             startActivity(intent);
 
         } else if (messageEvent.getPath().equalsIgnoreCase(DIET)){
@@ -42,8 +42,8 @@ public class PhoneListenerService extends WearableListenerService {
             Intent intent = new Intent(this, StartScreen.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-            Toast.makeText(getApplicationContext(), "Got Diet Data Update: " + value,
-                    Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(), "Got Diet Data Update: " + value,
+//                    Toast.LENGTH_LONG).show();
             startActivity(intent);
 
         } else

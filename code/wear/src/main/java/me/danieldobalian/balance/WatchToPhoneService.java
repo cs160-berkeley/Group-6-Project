@@ -62,8 +62,8 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
                         // final String command = bundle.getString("command");
                         //final String data = bundle.getString("data");
                         Log.v("T", "Sending /command: " + command);
-                        Toast.makeText(getApplicationContext(), "Sending Data to phone: " + data,
-                                Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(), "Sending Data to phone: " + data,
+//                                Toast.LENGTH_LONG).show();
 
                         sendMessage("/" + command, data);
                         Log.v("T", "Sent message detailed with: " + data);

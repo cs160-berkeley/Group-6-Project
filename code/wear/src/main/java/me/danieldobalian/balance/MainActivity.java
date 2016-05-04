@@ -136,14 +136,14 @@ public class MainActivity extends WearableActivity  implements SensorEventListen
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_HEART_RATE) {
             String msg = "" + (int)event.values[0];
-            Toast.makeText(getApplicationContext(), "Heart Rate: " + event.values[0],
-                    Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(), "Heart Rate: " + event.values[0],
+//                    Toast.LENGTH_SHORT).show();
             Log.d(TAG, msg);
         }
         else if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
             String msg = "Count: " + (int)event.values[0];
-            Toast.makeText(getApplicationContext(), "Light: " + event.values[0],
-                    Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(), "Light: " + event.values[0],
+//                    Toast.LENGTH_SHORT).show();
             Log.d(TAG, msg);
         }
         else

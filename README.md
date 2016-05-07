@@ -4,11 +4,11 @@ An application for people with clinical depression to track their mood, diet, an
 
 ## Authors
 
-Hashmi Hamza ([hhashmi@berkeley.edu](mailto:hhashmi@berkeley.edu))
-Daniel Dobalian ([ddobalian@berkeley.edu](mailto:ddobalian@berkeley.edu))
-Angela Kuo ([akuo5@berkeley.edu](mailto:akuo5@berkeley.edu))
-Kevin Baum ([hhashmi@berkeley.edu](mailto:hhashmi@berkeley.edu))
-Nicholas Adhyatama ([nicholasal@berkeley.edu](mailto:nicholasal@berkeley.edu))
+* Hashmi Hamza ([hhashmi@berkeley.edu](mailto:hhashmi@berkeley.edu))
+* Daniel Dobalian ([ddobalian@berkeley.edu](mailto:ddobalian@berkeley.edu))
+* Angela Kuo ([akuo5@berkeley.edu](mailto:akuo5@berkeley.edu))
+* Kevin Baum ([hhashmi@berkeley.edu](mailto:hhashmi@berkeley.edu))
+* Nicholas Adhyatama ([nicholasal@berkeley.edu](mailto:nicholasal@berkeley.edu))
 
 ## Presentation Slides
 
@@ -16,18 +16,22 @@ See [Balance] (https://docs.google.com/presentation/d/1ku-fHvK3feWplx1aaCN3--z3B
 
 ## Screenshots
 
-<!-- <img src="screenshots/main.png" height="400" alt="Screenshot"/>
-<img src="screenshots/1.png" height="400" alt="Screenshot"/>
-<img src="screenshots/2.png" height="400" alt="Screenshot"/>
-<img src="screenshots/3.png" height="400" alt="Screenshot"/>
-<img src="screenshots/4.png" height="400" alt="Screenshot"/> -->
+<img src="screenshots/login.png" height="400" alt="Screenshot"/>
+<img src="screenshots/dash.png" height="400" alt="Screenshot"/>
+<img src="screenshots/mood.png" height="400" alt="Screenshot"/>
+<img src="screenshots/diet.png" height="400" alt="Screenshot"/>
+<img src="screenshots/dr.png" height="400" alt="Screenshot"/>
+<img src="screenshots/privacy.png" height="400" alt="Screenshot"/>
+<img src="screenshots/watch-dash.png" height="400" alt="Screenshot"/>
+<img src="screenshots/watch-mood.png" height="400" alt="Screenshot"/>
+<img src="screenshots/watch-diet.png" height="400" alt="Screenshot"/>
+
 
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Any other support
-* youtube.com/slidenerd
+
+* https://youtube.com/slidenerd
 * http://stackoverflow.com/questions/10686209/attaching-a-pdf-to-an-email-from-android-app-file-size-is-zero
 * http://www.codeproject.com/Articles/986574/Android-iText-Pdf-Example
 * https://gist.github.com/mjohnsullivan/557c2f19ba177312b1d
@@ -39,20 +43,7 @@ See [Balance] (https://docs.google.com/presentation/d/1ku-fHvK3feWplx1aaCN3--z3B
 * http://stackoverflow.com/questions/25896481/heart-rate-sensor-api-for-android
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Group-6-Project
+# additional information
 Welcome to Group 6's Project: Balance
 
 Currently we have worked out a skeleton for our application!

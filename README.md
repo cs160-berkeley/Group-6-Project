@@ -7,7 +7,7 @@ An application for people with clinical depression to track their mood, diet, an
 * Hashmi Hamza ([hhashmi@berkeley.edu](mailto:hhashmi@berkeley.edu))
 * Daniel Dobalian ([ddobalian@berkeley.edu](mailto:ddobalian@berkeley.edu))
 * Angela Kuo ([akuo5@berkeley.edu](mailto:akuo5@berkeley.edu))
-* Kevin Baum ([hhashmi@berkeley.edu](mailto:hhashmi@berkeley.edu))
+* Kevin Baum ([link.kb@berkeley.edu](mailto:link.kb@berkeley.edu))
 * Nicholas Adhyatama ([nicholasal@berkeley.edu](mailto:nicholasal@berkeley.edu))
 
 ## Presentation Slides

@@ -43,7 +43,7 @@ See [Balance] (https://docs.google.com/presentation/d/1ku-fHvK3feWplx1aaCN3--z3B
 * http://stackoverflow.com/questions/25896481/heart-rate-sensor-api-for-android
 
 
-# additional information
+# Additional Information
 Welcome to Group 6's Project: Balance
 
 Currently we have worked out a skeleton for our application!

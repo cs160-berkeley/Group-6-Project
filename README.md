@@ -46,8 +46,4 @@ See [Balance] (https://docs.google.com/presentation/d/1ku-fHvK3feWplx1aaCN3--z3B
 # Additional Information
 Welcome to Group 6's Project: Balance
 
-Currently we have worked out a skeleton for our application!
-
-Please checkout the other two branches to see our two features we are developing!
-
 Thank you for your time. Hope you like it. Enjoy Balance.

@@ -22,9 +22,9 @@ See [Balance] (https://docs.google.com/presentation/d/1ku-fHvK3feWplx1aaCN3--z3B
 <img src="screenshots/diet.png" height="400" alt="Screenshot"/>
 <img src="screenshots/dr.png" height="400" alt="Screenshot"/>
 <img src="screenshots/privacy.png" height="400" alt="Screenshot"/>
-<img src="screenshots/watch-dash.png" height="400" alt="Screenshot"/>
-<img src="screenshots/watch-mood.png" height="400" alt="Screenshot"/>
-<img src="screenshots/watch-diet.png" height="400" alt="Screenshot"/>
+<img src="screenshots/watch-dash.png" height="200" alt="Screenshot"/>
+<img src="screenshots/watch-mood.png" height="200" alt="Screenshot"/>
+<img src="screenshots/watch-diet.png" height="200" alt="Screenshot"/>
 
 
 
